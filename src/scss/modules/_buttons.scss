@@ -1,6 +1,6 @@
 .custom-btn {
   border-radius: 0;
-  border: 2px solid $red;
+  border: 2px solid $black;
   background: transparent;
   padding: 15px 0;
   font-size: 2rem;
@@ -13,14 +13,14 @@
   }
 
 	&:hover{
-		background-color: $red;
+		background-color:black;
 		color: $white;
 	}
 }
 
 a.custom-btn{
 	&:hover{
-		background-color: $red;
+		background-color: $black;
 		color: $white;
 	}
 }
