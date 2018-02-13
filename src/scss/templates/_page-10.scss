@@ -4,5 +4,15 @@ main.page-10 {
 
   .body-cont {
     background-color: $bridal-heath;
+    min-height: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 40vw;
+      height: auto;
+      opacity: .85;
+    }
   }
 }
