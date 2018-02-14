@@ -3,16 +3,53 @@ main.page-10 {
   padding: 2.5vw;
 
   .body-cont {
+    position: relative;
     background-color: $bridal-heath;
-    min-height: 100vw;
+    min-height: 125vw;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    img {
+    .hero {
       width: 40vw;
       height: auto;
       opacity: .85;
+    }
+
+    .nav-section {
+      position: absolute;
+      top: 10vw;
+      left: 40%;
+      @include css3-prefix(transform, rotate(270deg));
+      border-left: 1px solid $black;
+      padding: 0 10px;
+
+      &:after {
+        display: block;
+        position: absolute;
+        content: "";
+        background-color: $black;
+        width: 30vw;
+        height: 1px;
+        top: 50%;
+        left: 0;
+        @include css3-prefix(transform, translateX(-100%));
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          line-height: 1.25;
+
+          a:hover {
+            color: $tuft-bush;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 }
