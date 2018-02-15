@@ -16,7 +16,7 @@ main.page-10 {
       opacity: .85;
     }
 
-    .nav-section {
+    section.navigation {
       position: absolute;
       top: 10vw;
       left: 40%;
@@ -36,20 +36,66 @@ main.page-10 {
         @include css3-prefix(transform, translateX(-100%));
       }
 
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+      li {
+        line-height: 1.25;
+
+        a:hover {
+          color: $tuft-bush;
+          text-decoration: none;
+        }
+      }
+    }
+
+    section#projects {
+      position: absolute;
+      top: 40%;
+      right: -10vw;
+      @include css3-prefix(transform, translateX(-100%));
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+
+      .date-cont {
+        @include css3-prefix(transform, rotate(270deg));
+        margin-bottom: 20%;
+
+        .dates {
+          width: 35%;
+          float: left;
+          text-align: right;
+        }
+
+        .titles {
+          width: 55%;
+          float: right;
+          white-space: nowrap;
+
+          li {
+            font-weight: 400;
+          }
+        }
+      }
+
+      h2 {
+        margin: 15px 0 15px -2.5vw;
+      }
+
+      .desc-list {
+        @include css3-prefix(transform, rotate(270deg));
+        margin-top: 32.5%;
 
         li {
-          line-height: 1.25;
-
-          a:hover {
-            color: $tuft-bush;
-            text-decoration: none;
-          }
+          text-align: right;
         }
       }
     }
   }
+}
+
+
+// Common Styles
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
