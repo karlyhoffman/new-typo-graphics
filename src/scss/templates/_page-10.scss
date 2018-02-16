@@ -72,6 +72,11 @@ main.page-10 {
 
           li {
             font-weight: 400;
+
+            a:hover {
+              color: $tuft-bush;
+              text-decoration: none;
+            }
           }
         }
       }
