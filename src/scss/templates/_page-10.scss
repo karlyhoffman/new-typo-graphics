@@ -46,6 +46,15 @@ main.page-10 {
       }
     }
 
+    section#about {
+      position: absolute;
+      top: 22%;
+      width: 10vw;
+      left: 14vw;
+      min-width: 150px;
+      text-align: right;
+    }
+
     section#projects {
       position: absolute;
       top: 40%;
