@@ -104,10 +104,36 @@ main.page-10 {
       .desc-list {
         @include css3-prefix(transform, rotate(270deg));
         margin-top: 32.5%;
+        text-align: right;
+      }
+    }
 
-        li {
-          text-align: right;
+    section#work-history {
+      position: absolute;
+      top: 55%;
+      left: 12vw;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.75;
+
+      .titles {
+        @include css3-prefix(transform, rotate(90deg));
+        text-align: right;
+        margin-bottom: 30%;
+
+        .position {
+          font-weight: 400;
+          padding-right: 5px;
         }
+      }
+
+      h2 {
+        margin: 20px 0 20px 4vw;
+      }
+
+      .companies {
+        @include css3-prefix(transform, rotate(90deg));
+        margin-top: 30%;
       }
     }
   }
