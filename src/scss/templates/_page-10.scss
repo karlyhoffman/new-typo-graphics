@@ -19,7 +19,7 @@ main.page-10 {
     h1 {
       position: absolute;
       top: 40%;
-      left: 35%;
+      left: 32.5%;
       font-size: 5rem;
     }
 
@@ -45,11 +45,6 @@ main.page-10 {
 
       li {
         line-height: 1.25;
-
-        a:hover {
-          color: $tuft-bush;
-          text-decoration: none;
-        }
       }
     }
 
@@ -88,11 +83,6 @@ main.page-10 {
 
           li {
             font-weight: 400;
-
-            a:hover {
-              color: $tuft-bush;
-              text-decoration: none;
-            }
           }
         }
       }
@@ -136,11 +126,29 @@ main.page-10 {
         margin-top: 30%;
       }
     }
+
+    section#contact {
+      position: absolute;
+      top: 70%;
+      right: 35vw;
+      max-width: 75px;
+      font-size: 1.25rem;
+      line-height: 1.6;
+
+      p {
+        margin: 0;
+      }
+    }
   }
 }
 
 
 // Common Styles
+a:hover {
+  color: $tuft-bush;
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
   padding: 0;
