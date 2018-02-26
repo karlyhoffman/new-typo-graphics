@@ -133,10 +133,15 @@ main.page-10 {
       top: 70%;
       right: 35vw;
       max-width: 75px;
-      font-size: 1.25rem;
       line-height: 1.6;
 
+      h2 {
+        font-size: 2.25rem;
+        margin-bottom: 2px;
+      }
+
       p {
+        font-size: 1.25rem;
         margin: 0;
       }
     }
