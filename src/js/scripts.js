@@ -2,9 +2,32 @@
   'use strict';
   $(function () {
 
-    // Page 10 Scripts
+    /*** Page 10 Scripts ***/
 
-    // when user clicks a project in navbar, scroll to project section then open clicked project
+    // navbar scroll
+    var navLinks = $('#navigation a');
+    navLinks.click( function(e) {
+        e.preventDefault();
+        $('#projects, #work-history').removeClass('hover');
+        var linkLocation = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(linkLocation).offset().top - 75
+        }, 400);
+
+        if (linkLocation === '#projects' || linkLocation === '#work-history') {
+          $(linkLocation).addClass('hover').delay(600);
+        }
+    });
+
+    $('#projects, #work-history').mouseover(function(){
+      $(this).removeClass('hover');
+    })
+
+    // next steps:
+        // 1. add project modals
+        // 2. open modals on nav click
+
+
 
   });
 })(jQuery, window, document);

@@ -24,7 +24,7 @@ main.page-10 {
       color: $mona-lisa;
     }
 
-    section.navigation {
+    section#navigation {
       position: absolute;
       top: 10vw;
       left: 40%;
@@ -68,6 +68,7 @@ main.page-10 {
       line-height: 1.6;
       @include transition(all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1));
 
+      &.hover,
       &:hover {
         @include css3-prefix(transform, rotate(-270deg));
         right: 16vw;
@@ -114,6 +115,7 @@ main.page-10 {
       line-height: 1.75;
       @include transition(all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1));
 
+      &.hover,
       &:hover {
         @include css3-prefix(transform, rotate(-90deg));
       }
@@ -174,7 +176,8 @@ main.page-10 {
 
 
 // Common Styles
-a:hover {
+a:hover,
+a:focus {
   color: $tuft-bush;
   text-decoration: none;
 }
