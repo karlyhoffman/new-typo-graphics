@@ -23,11 +23,18 @@
       $(this).removeClass('hover');
     })
 
+    // modal triggers
+    var modalTriggers = $('.trigger');
+    modalTriggers.click( function(e) {
+      e.preventDefault();
+      var modal = '#' + $(this).attr('for');
+      $(modal).prop("checked", !$(modal).prop("checked"));
+    });
+
+
     // next steps:
         // 1. add project modals
         // 2. open modals on nav click
-
-
 
   });
 })(jQuery, window, document);
