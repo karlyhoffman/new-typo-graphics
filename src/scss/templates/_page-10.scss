@@ -237,7 +237,7 @@ ul {
       flex: 1;
       display: flex;
       flex-direction: column;
-      padding: 0 20px 0 15px;
+      padding: 15px 25px 15px 17.5px;
 
       h2 {
         margin-top: 0;
@@ -268,6 +268,7 @@ ul {
     color: $tuft-bush;
     font-size: 14px;
     font-weight: normal;
+    margin-top: 20px;
     &:hover {
       color: $medium-grey;
     }
