@@ -103,6 +103,10 @@ main.page-10 {
         @include css3-prefix(transform, rotate(270deg));
         margin-top: 32.5%;
         text-align: right;
+
+        span {
+          margin: 0 2.5px;
+        }
       }
     }
 
