@@ -10,9 +10,17 @@
         e.preventDefault();
         $('#projects, #work-history').removeClass('hover');
         var linkLocation = $(this).attr('href');
+        var projectNum = $(this).attr('data-project');
         $('html, body').animate({
             scrollTop: $(linkLocation).offset().top - 75
-        }, 400);
+        }, 400 ).promise().done(function(){
+          if (projectNum !== "undefined") {
+            var openModal = "#modal-toggle-" + projectNum;
+            setTimeout(function () {
+               $(openModal).prop("checked", !$(openModal).prop("checked"));
+           }, 225);
+          }
+        });
 
         if (linkLocation === '#projects' || linkLocation === '#work-history') {
           $(linkLocation).addClass('hover').delay(600);
@@ -30,11 +38,6 @@
       var modal = '#' + $(this).attr('for');
       $(modal).prop("checked", !$(modal).prop("checked"));
     });
-
-
-    // next steps:
-        // 1. add project modals
-        // 2. open modals on nav click
 
   });
 })(jQuery, window, document);
