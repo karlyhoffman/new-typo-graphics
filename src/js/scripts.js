@@ -19,16 +19,33 @@
         $about = $('#about'),
         $projects = $('#projects');
 
-    tl.fromTo($nav, 0.75,
-      { rotation: 0 },
-      { rotation: -90, ease: Quad.easeInOut }
-    ).fromTo($about, 0.75,
-      { marginTop: 150, "opacity": "0" },
-      { marginTop: 0, "opacity": "1", ease: Power1.easeOut }
-    ).fromTo($projects, 0.75,
-      { marginTop: 10, "opacity": "0" },
-      { marginTop: 0, "opacity": "1", ease: Power1.easeOut }
-    );
+    $(window).on('load', function() {
+      var windowWidth = $( window ).width();
+      if ( windowWidth > 900 ) {
+
+        tl.fromTo($nav, 0.75,
+          { rotation: 0 },
+          { rotation: -90, ease: Quad.easeInOut }
+        ).fromTo($about, 0.75,
+          { marginTop: 150, "opacity": "0" },
+          { marginTop: 0, "opacity": "1", ease: Power1.easeOut }
+        ).fromTo($projects, 0.75,
+          { marginTop: 10, "opacity": "0" },
+          { marginTop: 0, "opacity": "1", ease: Power1.easeOut }
+        );
+
+      } else {
+
+        tl.fromTo($about, 0.75,
+          { "opacity": "0" },
+          { "opacity": "1", ease: Power1.easeOut }
+        ).fromTo($projects, 0.75,
+          { "opacity": "0" },
+          { "opacity": "1", ease: Power1.easeOut }
+        );
+
+      }
+    });
 
     // Scroll reveal animation
     var controller = new ScrollMagic.Controller({

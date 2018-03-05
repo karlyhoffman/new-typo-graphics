@@ -11,18 +11,32 @@ main.page-10 {
     justify-content: center;
 
     .hero {
-      width: 40vw;
+      position: absolute;
+      width: 75vw;
       height: auto;
       opacity: .85;
+
+      @media only screen  and (min-width : 900px) {
+        width: 40vw;
+      }
+
+      @media only screen  and (min-width : 1300px) {
+        width: 585px;
+      }
     }
 
     h1 {
       position: absolute;
-      top: 40%;
-      left: 32.5%;
-      font-size: 5rem;
+      top: 47.5%;
+      font-size: 3rem;
       color: $mona-lisa;
+
+      @media only screen  and (min-width : 900px) {
+        top: 40%;
+        font-size: 5rem;
+      }
     }
+
 
     section#navigation {
       display: flex;
@@ -33,20 +47,6 @@ main.page-10 {
       left: 45%;
       width: 35vw;
       @include css3-prefix(transform-origin, left bottom);
-      // border-left: 1px solid $black;
-      // padding: 0 10px;
-
-      // &:after {
-      //   display: block;
-      //   position: relative;
-      //   content: "";
-      //   background-color: $black;
-      //   width: 30vw;
-      //   height: 1px;
-      //   top: 50%;
-      //   left: 0;
-      //   @include css3-prefix(transform, translateX(-100%));
-      // }
 
       .line-dec {
         background-color: $black;
@@ -65,123 +65,155 @@ main.page-10 {
       }
     }
 
+
     section#about {
       opacity: 0;
       position: absolute;
-      top: 22%;
-      width: 10vw;
-      left: 14vw;
-      min-width: 150px;
+      top: 57.5%;
       text-align: right;
+      color: $mona-lisa;
+
+      @media only screen  and (min-width : 900px) {
+        top: 22%;
+        width: 10vw;
+        left: 14vw;
+        min-width: 150px;
+        color: $black;
+      }
+
+      @media only screen  and (min-width : 1300px) {
+        left: calc(50vw - (10vw + 360px));
+      }
+
+      @media only screen  and (min-width : 1800px) {
+        top: 27.5%;
+        left: 21vw;
+      }
     }
+
 
     section#projects {
       opacity: 0;
       position: absolute;
-      top: 40%;
-      right: -10vw;
-      @include css3-prefix(transform, translateX(-100%));
       display: flex;
       flex-direction: column;
       line-height: 1.6;
-      @include transition(all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1));
 
-      &.hover,
-      &:hover {
-        @include css3-prefix(transform, rotate(-270deg));
-        right: 16vw;
-      }
+      @media only screen  and (min-width : 900px) {
+        top: 40%;
+        left: 82.5vw;
+        @include css3-prefix(transform, translateX(-100%));
+        @include transition(all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1));
 
-      .date-cont {
-        @include css3-prefix(transform, rotate(270deg));
-        margin-bottom: 20%;
-
-        .dates {
-          width: 35%;
-          float: left;
-          text-align: right;
+        &.hover,
+        &:hover {
+          @include css3-prefix(transform, rotate(-270deg));
+          left: 57.5vw;
         }
 
-        .titles {
-          width: 55%;
-          float: right;
-          white-space: nowrap;
+        .date-cont {
+          @include css3-prefix(transform, rotate(270deg));
+          margin-bottom: 20%;
 
-          li {
-            font-weight: 400;
+          .dates {
+            width: 35%;
+            float: left;
+            text-align: right;
+          }
+
+          .titles {
+            width: 55%;
+            float: right;
+            white-space: nowrap;
+
+            li {
+              font-weight: 400;
+            }
+          }
+        }
+
+        h2 {
+          margin: 15px 0 15px -2.5vw;
+        }
+
+        .desc-list {
+          @include css3-prefix(transform, rotate(270deg));
+          margin-top: 32.5%;
+          text-align: right;
+
+          span {
+            margin: 0 2.5px;
           }
         }
       }
-
-      h2 {
-        margin: 15px 0 15px -2.5vw;
+      @media only screen  and (min-width : 1300px) {
+        left: calc(50vw + 450px);
       }
-
-      .desc-list {
-        @include css3-prefix(transform, rotate(270deg));
-        margin-top: 32.5%;
-        text-align: right;
-
-        span {
-          margin: 0 2.5px;
-        }
+      @media only screen  and (min-width : 1800px) {
+        left: calc(50vw + 475px);
       }
     }
 
+
     section#work-history {
       position: absolute;
-      top: 55%;
-      left: 12vw;
+      top: 110%;
       display: flex;
       flex-direction: column;
       line-height: 1.75;
       @include transition(all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1));
 
-      &.hover,
-      &:hover {
-        @include css3-prefix(transform, rotate(-90deg));
-      }
+      @media only screen  and (min-width : 900px) {
+        top: 55%;
+        left: 12vw;
 
-      .titles {
-        @include css3-prefix(transform, rotate(90deg));
-        text-align: right;
-        margin-bottom: 30%;
+        &.hover,
+        &:hover {
+          @include css3-prefix(transform, rotate(-90deg));
+        }
 
-        .position {
-          font-weight: 400;
-          padding-right: 5px;
+        .titles {
+          @include css3-prefix(transform, rotate(90deg));
+          text-align: right;
+          margin-bottom: 30%;
+
+          .position {
+            font-weight: 400;
+            padding-right: 5px;
+          }
+        }
+
+        h2 {
+          margin: 20px 0 20px 4vw;
+        }
+
+        .companies {
+          @include css3-prefix(transform, rotate(90deg));
+          margin-top: 30%;
         }
       }
-
-      h2 {
-        margin: 20px 0 20px 4vw;
-
-        // Overlap Color Change
-        // color: $mona-lisa;
-        //
-        // &:before {
-    		// 	content: attr(data-content);
-    		// 	position: absolute;
-    		// 	z-index: 2;
-    		// 	overflow: hidden;
-    		// 	white-space: nowrap;
-    		// 	width: 11.5vw;
-        //   color: $black;
-    		// }
+      @media only screen  and (min-width : 1300px) {
+        left: calc(50vw - 530px);
       }
-
-      .companies {
-        @include css3-prefix(transform, rotate(90deg));
-        margin-top: 30%;
+      @media only screen  and (min-width : 1800px) {
+        left: calc(50vw - 575px);
       }
     }
 
+
     section#contact {
       position: absolute;
-      top: 70%;
-      right: 35vw;
       max-width: 75px;
       line-height: 1.6;
+
+      @media only screen  and (min-width : 900px) {
+        top: 70%;
+        right: 35vw;
+      }
+
+      @media only screen  and (min-width : 1800px) {
+        top: 65%;
+      }
 
       h2 {
         font-size: 2.25rem;
