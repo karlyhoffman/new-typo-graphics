@@ -7,14 +7,20 @@ main.page-10 {
     background-color: $bridal-heath;
     min-height: 125vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+
+    @media only screen  and (min-width : 900px) {
+      align-items: center;
+      justify-content: center;
+    }
 
     .hero {
       position: absolute;
       width: 75vw;
       height: auto;
       opacity: .85;
+      z-index: 1;
+      align-self: center;
 
       @media only screen  and (min-width : 900px) {
         width: 40vw;
@@ -26,12 +32,14 @@ main.page-10 {
     }
 
     h1 {
-      position: absolute;
       top: 47.5%;
       font-size: 3rem;
       color: $mona-lisa;
+      z-index: 2;
+      order: 1;
 
       @media only screen  and (min-width : 900px) {
+        position: absolute;
         top: 40%;
         font-size: 5rem;
       }
@@ -42,11 +50,15 @@ main.page-10 {
       display: flex;
       flex-direction: row;
       align-items: center;
-      position: absolute;
       top: 40vw;
       left: 45%;
       width: 35vw;
+      z-index: 2;
+      order: 0;
       @include css3-prefix(transform-origin, left bottom);
+      @media only screen  and (min-width : 900px) {
+        position: absolute;
+      }
 
       .line-dec {
         background-color: $black;
@@ -68,12 +80,14 @@ main.page-10 {
 
     section#about {
       opacity: 0;
-      position: absolute;
       top: 57.5%;
       text-align: right;
       color: $mona-lisa;
+      z-index: 2;
+      order: 2;
 
       @media only screen  and (min-width : 900px) {
+        position: absolute;
         top: 22%;
         width: 10vw;
         left: 14vw;
@@ -94,12 +108,14 @@ main.page-10 {
 
     section#projects {
       opacity: 0;
-      position: absolute;
       display: flex;
       flex-direction: column;
       line-height: 1.6;
+      z-index: 2;
+      order: 2;
 
       @media only screen  and (min-width : 900px) {
+        position: absolute;
         top: 40%;
         left: 82.5vw;
         @include css3-prefix(transform, translateX(-100%));
@@ -156,14 +172,16 @@ main.page-10 {
 
 
     section#work-history {
-      position: absolute;
       top: 110%;
       display: flex;
       flex-direction: column;
       line-height: 1.75;
+      z-index: 2;
+      order: 2;
       @include transition(all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1));
 
       @media only screen  and (min-width : 900px) {
+        position: absolute;
         top: 55%;
         left: 12vw;
 
@@ -202,11 +220,13 @@ main.page-10 {
 
 
     section#contact {
-      position: absolute;
       max-width: 75px;
       line-height: 1.6;
+      z-index: 2;
+      order: 2;
 
       @media only screen  and (min-width : 900px) {
+        position: absolute;
         top: 70%;
         right: 35vw;
       }
