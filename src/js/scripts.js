@@ -25,9 +25,9 @@
       var windowWidth = $( window ).width();
       if ( windowWidth > 900 ) {
 
-        tl.fromTo($nav, 0.75,
+        tl.fromTo($nav, 1,
           { rotation: 0 },
-          { rotation: -90, ease: Quad.easeInOut }
+          { rotation: -90, ease: Power1.easeInOut }
         ).fromTo($about, 0.75,
           { marginTop: 150, "opacity": "0" },
           { marginTop: 0, "opacity": "1", ease: Power1.easeOut }

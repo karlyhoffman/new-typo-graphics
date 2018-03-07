@@ -16,6 +16,7 @@ main.page-10 {
 
     .hero {
       position: absolute;
+      margin-top: 7.5vw;
       width: 75vw;
       height: auto;
       opacity: .85;
@@ -24,6 +25,7 @@ main.page-10 {
 
       @media only screen  and (min-width : 900px) {
         width: 40vw;
+        margin-top: auto;
       }
 
       @media only screen  and (min-width : 1300px) {
@@ -32,16 +34,18 @@ main.page-10 {
     }
 
     h1 {
-      top: 47.5%;
-      font-size: 3rem;
-      color: $mona-lisa;
       z-index: 2;
       order: 1;
+      font-size: 3rem;
+      color: $mona-lisa;
+      margin: 0 auto;
+      padding-top: 15vw;
 
       @media only screen  and (min-width : 900px) {
         position: absolute;
         top: 40%;
         font-size: 5rem;
+        padding-top: 0;
       }
     }
 
@@ -50,20 +54,29 @@ main.page-10 {
       display: flex;
       flex-direction: row;
       align-items: center;
-      top: 40vw;
-      left: 45%;
-      width: 35vw;
+      margin: 13vw 0;
+      width: 42.5vw;
       z-index: 2;
       order: 0;
       @include css3-prefix(transform-origin, left bottom);
+
       @media only screen  and (min-width : 900px) {
         position: absolute;
+        top: 37.5vw;
+        left: 45%;
+        width: 35vw;
+        margin: 0;
       }
 
       .line-dec {
         background-color: $black;
         width: 100%;
         height: 1px;
+        margin-left: -5vw;
+
+        @media only screen  and (min-width : 900px) {
+          margin-left: 0;
+        }
       }
 
       ul {
@@ -73,18 +86,44 @@ main.page-10 {
         li {
           line-height: 1.25;
           white-space: nowrap;
+
+          a {
+            @media only screen  and (max-width : 899px) {
+              color: $tuft-bush;
+
+              &:hover {
+                color: $black;
+              }
+            }
+          }
         }
       }
     }
 
 
     section#about {
+      position: relative;
       opacity: 0;
-      top: 57.5%;
       text-align: right;
-      color: $mona-lisa;
+      color: $black;
       z-index: 2;
       order: 2;
+      width: 90%;
+      left: 5vw;
+      margin-top: 40vw;
+      margin-bottom: 50px;
+
+      // &:before {
+      //   position: absolute;
+      //   display: block;
+      //   margin: 0 auto;
+      //   content: attr(data-content);
+      //   color: $tuft-bush;
+      //   width: 100%;
+      //   height: 42.5vw;
+      //   -webkit-clip-path: inset(0 10vw 0 10vw);
+      //           clip-path: inset(0 10vw 0 10vw);
+      // }
 
       @media only screen  and (min-width : 900px) {
         position: absolute;
@@ -93,6 +132,7 @@ main.page-10 {
         left: 14vw;
         min-width: 150px;
         color: $black;
+        margin: 0;
       }
 
       @media only screen  and (min-width : 1300px) {
@@ -114,6 +154,41 @@ main.page-10 {
       z-index: 2;
       order: 2;
 
+      .date-cont {
+        .dates {
+          width: 25%;
+          float: left;
+          text-align: right;
+        }
+
+        .titles {
+          width: 70%;
+          float: right;
+          white-space: nowrap;
+
+          li {
+            font-weight: 400;
+          }
+        }
+      }
+
+      @media only screen  and (max-width : 899px) {
+        margin-bottom: 50px;
+
+        h2 {
+          order: 1;
+          padding-left: 2.5vw
+        }
+
+        .date-cont {
+          order: 2;
+        }
+
+        .desc-list {
+          display: none;
+        }
+      }
+
       @media only screen  and (min-width : 900px) {
         position: absolute;
         top: 40%;
@@ -133,18 +208,10 @@ main.page-10 {
 
           .dates {
             width: 35%;
-            float: left;
-            text-align: right;
           }
 
           .titles {
             width: 55%;
-            float: right;
-            white-space: nowrap;
-
-            li {
-              font-weight: 400;
-            }
           }
         }
 
