@@ -19,7 +19,9 @@
         $about = $('#about'),
         $projects = $('#projects');
 
-    $(window).on('load', function() {
+    $(window).on('load resize', function() {
+      tl.pause(0).clear().restart();
+
       var windowWidth = $( window ).width();
       if ( windowWidth > 900 ) {
 
