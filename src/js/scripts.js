@@ -20,18 +20,14 @@
         $about = $('#about'),
         $projects = $('#projects');
 
+
     $(window).on('load resize', function() {
       tl.pause(0).clear().restart();
 
       var windowWidth = $( window ).width();
       if ( windowWidth > 900 ) {
 
-        // tl.fromTo($line, 2,
-        //   {"width": "0"},
-        //   {"width": "100%", ease: Power0.easeNone }
-        // )
-
-        tl.fromTo($nav, 1,
+        tl.fromTo($nav, 0.75,
           { rotation: 0 },
           { rotation: -90, ease: Power1.easeInOut }
         ).fromTo($about, 0.75,

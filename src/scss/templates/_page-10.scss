@@ -68,14 +68,19 @@ main.page-10 {
         margin: 0;
       }
 
-      .line-dec {
-        background-color: $black;
+      .line-cont {
+        position: relative;
         width: 100%;
-        height: 1px;
         margin-left: -5vw;
 
         @media only screen  and (min-width : 900px) {
           margin-left: 0;
+        }
+
+        .line-dec {
+          background-color: $black;
+          width: 100%;
+          height: 1px;
         }
       }
 
