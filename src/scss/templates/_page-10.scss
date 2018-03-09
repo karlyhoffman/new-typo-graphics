@@ -415,11 +415,19 @@ ul {
 
   .row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    @media only screen  and (min-width : 900px) {
+      flex-direction: row;
+    }
 
     .img-cont {
       flex: 1.75;
-      padding-left: 15px;
+      padding: 20px 15px;
+
+      @media only screen  and (min-width : 900px) {
+        padding: 0 0 0 15px;
+      }
 
       img {
         max-width: 100%;

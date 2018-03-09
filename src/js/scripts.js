@@ -16,6 +16,7 @@
 
     var tl     = new TimelineMax(tl_options),
         $nav   = $('#navigation'),
+        $line  = $('.line-dec'),
         $about = $('#about'),
         $projects = $('#projects');
 
@@ -24,6 +25,11 @@
 
       var windowWidth = $( window ).width();
       if ( windowWidth > 900 ) {
+
+        // tl.fromTo($line, 2,
+        //   {"width": "0"},
+        //   {"width": "100%", ease: Power0.easeNone }
+        // )
 
         tl.fromTo($nav, 1,
           { rotation: 0 },
