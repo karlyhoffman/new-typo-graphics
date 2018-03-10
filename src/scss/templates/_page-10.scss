@@ -404,7 +404,7 @@ ul {
   .modal-close {
     color: $light-grey;
     position: absolute;
-    top: 5px;
+    top: -7px;
     right: 7px;
     font-size: 16px;
     width: 25px;
@@ -519,17 +519,21 @@ ul {
       background-color: $white;
       width: 90vw;
       height: auto;
+      max-height: 90vh;
       position: fixed;
-      top: 10%;
+      top: 5vh;
       left: 50%;
       @include transform(translateX(-50%));
       border-radius: 2px;
-      z-index: 999;
+      z-index: 100;
       pointer-events: auto;
       cursor: auto;
       visibility: visible;
       @include css3-prefix(box-shadow,  0px 2px 50px -5px rgba(0,0,0,0.4) !important);
-      padding: 15px;
+      padding: 0 15px;
+      border-top: 15px solid $white;
+      border-bottom: 15px solid $white;
+      overflow-y: scroll;
     }
   }
 }
