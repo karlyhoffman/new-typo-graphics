@@ -1,6 +1,7 @@
 main.page-10 {
   font-family: $lato;
   padding: 2.5vw;
+  font-size: 1rem;
 
   .body-cont {
     position: relative;
@@ -37,7 +38,7 @@ main.page-10 {
       opacity: 0;
       z-index: 2;
       order: 1;
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: $mona-lisa;
       margin: 0 auto;
       padding-top: 15vw;
@@ -45,7 +46,7 @@ main.page-10 {
       @media only screen  and (min-width : 900px) {
         position: absolute;
         top: 40%;
-        font-size: 5rem;
+        font-size: 3.25rem;
         padding-top: 0;
       }
     }
@@ -68,6 +69,7 @@ main.page-10 {
         width: auto;
         height: 32.5vw;
         margin: 0;
+        font-size: .9rem;
       }
 
       .line-dec {
@@ -91,7 +93,7 @@ main.page-10 {
 
         @media only screen  and (min-width : 900px) {
           @include css3-prefix(transform, rotate(-90deg));
-          margin-top: calc(-32.5vw - 83px);
+          margin-top: calc(-32.5vw - 91px);
         }
 
         li {
@@ -121,21 +123,21 @@ main.page-10 {
       order: 2;
       width: 90%;
       left: 5vw;
-      margin-top: 40vw;
+      margin-top: 25vw;
       margin-bottom: 50px;
 
       @media only screen  and (min-width : 900px) {
         position: absolute;
-        top: 22%;
-        width: 10vw;
-        left: 14vw;
+        top: 21%;
+        width: 12.5vw;
+        left: 13vw;
         min-width: 150px;
         color: $black;
         margin: 0;
       }
 
       @media only screen  and (min-width : 1300px) {
-        left: calc(50vw - (10vw + 360px));
+        left: calc(48vw - (10vw + 360px));
       }
 
       @media only screen  and (min-width : 1800px) {
@@ -172,6 +174,7 @@ main.page-10 {
       }
 
       @media only screen  and (max-width : 899px) {
+        font-size: 14px;
         margin-bottom: 50px;
 
         h2 {
@@ -189,6 +192,7 @@ main.page-10 {
       }
 
       @media only screen  and (min-width : 900px) {
+        font-size: 15px;
         position: absolute;
         top: 40%;
         left: 82.5vw;
@@ -206,15 +210,16 @@ main.page-10 {
           margin-bottom: 20%;
 
           .dates {
-            width: 35%;
+            width: 40%;
           }
 
           .titles {
-            width: 55%;
+            width: 50%;
           }
         }
 
         h2 {
+          font-size: 2.15rem;
           margin: 15px 0 15px -2.5vw;
         }
 
@@ -248,6 +253,7 @@ main.page-10 {
       @include transition(all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1));
 
       @media only screen  and (max-width : 899px) {
+        font-size: 14px;
         justify-content: space-evenly;
 
         h2 {
@@ -281,10 +287,11 @@ main.page-10 {
       }
 
       @media only screen  and (min-width : 900px) {
+        font-size: 15px;
         flex-direction: column;
         position: absolute;
-        top: 55%;
-        left: 12vw;
+        top: 57.5%;
+        left: 11.5vw;
 
         &.hover,
         &:hover {
@@ -303,6 +310,7 @@ main.page-10 {
         }
 
         h2 {
+          font-size: 2.15rem;
           margin: 20px 0 20px 4vw;
         }
 
@@ -328,7 +336,7 @@ main.page-10 {
       padding: 30px 2.5vw 50px;
 
       h2 {
-        font-size: 3rem;
+        font-size: 2.15rem;
       }
 
       ul {
@@ -338,7 +346,7 @@ main.page-10 {
         width: 90vw;
 
         li {
-          width: 25%;
+          width: 50%;
         }
       }
 
@@ -349,13 +357,17 @@ main.page-10 {
         padding: 0;
 
         h2 {
-          font-size: 2.25rem;
+          font-size: 1.9rem;
           margin-bottom: 2px;
         }
 
         ul {
           display: block;
           padding-left: 2.5px;
+
+          li {
+            width: auto;
+          }
         }
       }
 
