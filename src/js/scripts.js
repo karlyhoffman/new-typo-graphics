@@ -27,9 +27,12 @@
       var windowWidth = $( window ).width();
       if ( windowWidth > 900 ) {
 
-        tl.fromTo($nav, 0.8,
-          { marginTop: 400, "opacity": "0" },
-          { marginTop: 0, "opacity": "1", ease: Power1.easeOut }
+        tl.fromTo($nav, 0.75,
+          { "opacity": "0" },
+          { "opacity": "1", ease: Power1.easeOut }
+        ).fromTo($line, 0.75,
+          { "bottom": "100%" },
+          { "bottom": "0", ease: Power1.easeOut }
         ).fromTo($about, 0.75,
           { marginTop: 150, "opacity": "0" },
           { marginTop: 0, "opacity": "1", ease: Power1.easeOut }
@@ -40,7 +43,10 @@
 
       } else {
 
-        tl.fromTo($about, 0.75,
+        tl.fromTo($nav, 0.75,
+          { "opacity": "0" },
+          { "opacity": "1", ease: Power1.easeOut }
+        ).fromTo($about, 0.75,
           { "opacity": "0" },
           { "opacity": "1", ease: Power1.easeOut }
         ).fromTo($projects, 0.75,
