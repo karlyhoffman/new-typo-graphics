@@ -330,7 +330,7 @@ main.page-10 {
 
 
     section#contact {
-      max-width: 75px;
+      // max-width: 75px;
       line-height: 1.6;
       z-index: 2;
       order: 2;
@@ -353,8 +353,8 @@ main.page-10 {
 
       @media only screen  and (min-width : 900px) {
         position: absolute;
-        top: 70%;
-        right: 35vw;
+        top: 64%;
+        right: 7.5vw;
         padding: 0;
 
         h2 {
@@ -363,22 +363,59 @@ main.page-10 {
         }
 
         ul {
-          display: block;
-          padding-left: 2.5px;
+          width: auto;
 
           li {
             width: auto;
+            padding: 0 25px 0 2px;
           }
         }
       }
 
       @media only screen  and (min-width : 1800px) {
         top: 65%;
+        right: 15vw;
       }
     }
 
-    section#skills {
 
+    section#skills {
+      line-height: 1.6;
+      z-index: 2;
+      order: 2;
+      padding: 50px 2.5vw 25px;
+
+      h2 {
+        font-size: 2.15rem;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      @media only screen  and (min-width : 900px) {
+        position: absolute;
+        top: 70%;
+        right: 36vw;
+        padding: 0;
+
+        h2 {
+          margin-bottom: 2px;
+        }
+
+        ul {
+          li {
+            padding: 0 25px 0 2px;
+          }
+        }
+      }
+
+      @media only screen  and (min-width : 1800px) {
+        top: 65%;
+        right: 37.5vw;
+      }
     }
   }
 }
