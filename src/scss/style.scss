@@ -3,11 +3,6 @@
 //----------------------------------*/
 @import 'mixins/_mixins.scss';
 
-//----------------------------------*\
-// BOOTSTRAP
-//----------------------------------*/
-@import 'vendor/_bootstrap.scss';
-
 
 //----------------------------------*\
 // CONFIG MODULES
@@ -27,8 +22,6 @@
 @import 'modules/_typography.scss';
 @import 'modules/_misc.scss';
 @import 'modules/_app.scss';
-
-
 // Enhancement modules
 @import 'modules/_breakpoints.scss';
 @import 'modules/_print.scss';
@@ -42,12 +35,8 @@
 @import 'partials/_main.scss';
 @import 'partials/_footer.scss';
 
+
 //----------------------------------*\
 // TEMPLATES
 //----------------------------------*/
 @import 'templates/_page-10.scss';
-
-//----------------------------------*\
-// VENDOR
-//----------------------------------*/
-@import 'vendor/_external.scss';
