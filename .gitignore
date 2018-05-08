@@ -15,7 +15,7 @@ pids
 logs
 results
 npm-debug.log
-node_modules
+node_modules/
 
 ## Bower
 src/components
