@@ -1,0 +1,122 @@
+/* Colors */
+$bridal-heath: #FFFAF0;
+$tuft-bush: #FFD7C9;
+$mona-lisa: #FFA799;
+
+$white: #fff;
+$black: #000;
+$light-grey: #aaa;
+$medium-grey: #333;
+
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+$lato: 'Lato', sans-serif;
+
+
+/* Global */
+* {
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font: 300 13px/1.6 'Lato', sans-serif;
+  color: $black;
+  transition: all .4s .3s ease-in;
+}
+
+body,html{
+	min-height: 100vh;
+  font-size: 96%;
+  overflow-x: hidden;
+}
+
+h2 {
+  @media (min-width: 992px) {
+    font-size: 2.3rem;
+    font-weight: 400;
+  }
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $tuft-bush;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 0 2.5vw 0.5vw;
+}
+
+
+/* Mixins */
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+   -khtml-#{$property}: #{$value};
+     -moz-#{$property}: #{$value};
+      -ms-#{$property}: #{$value};
+       -o-#{$property}: #{$value};
+          #{$property}: #{$value};
+}
+
+@mixin transition($properties...) {
+  @if length($properties) >= 1 {
+    @include css3-prefix('transition', $properties);
+  }
+  @else {
+    @include css3-prefix('transition',  "all 0.2s ease-in-out 0s");
+  }
+}
+
+@mixin transform($properties...) {
+  @if length($properties) >= 1 {
+    @include css3-prefix('transform', $properties);
+  }
+}
+
+@mixin transform-origin($properties...) {
+  @if length($properties) >= 1 {
+    @include css3-prefix('transform-origin', $properties);
+  }
+}
+
+@mixin breakpoint($point) {
+  @if $point == tv {
+    @media (min-width: 2200px) { @content ; }
+ }
+  @else if $point == desktop {
+    @media (min-width: 1200px) { @content ; }
+ }
+  @else if $point == laptop {
+    @media (min-width: 992px) { @content ; }
+ }
+   @else if $point == tablet {
+    @media (min-width: 768px) { @content ; }
+ }
+  @else if $point == phablet {
+    @media (min-width: 576px)  { @content ; }
+ }
+  @else if $point == lgPhone {
+    @media (min-width: 420px)  { @content ; }
+ }
+  @else {
+    @media (min-width: $point)  { @content ; }
+ }
+}

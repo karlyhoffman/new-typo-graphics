@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Gallery from '@/components/Gallery'
-import Page10 from '@/components/Page10/Page10.vue'
+import Page10 from '@/components/Page10/Home.vue'
 
 Vue.use(Router)
 
