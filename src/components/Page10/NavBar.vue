@@ -111,6 +111,7 @@ export default {
   }
 
   ul {
+    text-align: left;
     border-left: 1px solid $black;
     padding-left: 10px;
 
@@ -144,7 +145,7 @@ export default {
     @include breakpoint(laptop) {
       display: block;
       position: absolute;
-      top: 117px;
+      top: 119px;
       bottom: 0;
       left: 50%;
       background-color: $black;

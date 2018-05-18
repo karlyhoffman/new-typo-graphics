@@ -87,7 +87,7 @@ export default {
 
   @include breakpoint(laptop) {
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 7.5vw;
     flex-direction: column;
     justify-content: space-evenly;
