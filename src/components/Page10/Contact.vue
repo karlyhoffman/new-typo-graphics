@@ -2,7 +2,7 @@
   <div id="contact">
     <h2>{{ sectionTitle }}</h2>
     <ul>
-      <li v-for="link in links" :key="link">
+      <li v-for="link in links" :key="link.id">
         <a
           :href="link.href"
           :download="link.download ? true : false"

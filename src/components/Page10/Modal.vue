@@ -29,25 +29,25 @@
                 <span>{{ projects[modalToShow].year }}</span>
                 <span>{{ projects[modalToShow].location }}</span>
                 <ul>
-                  <li v-for="client in projects[modalToShow].client" :key="client">{{ client }}</li>
+                  <li v-for="client in projects[modalToShow].client" :key="client.id">{{ client }}</li>
                 </ul>
               </div>
 
               <h3>Technologies</h3>
               <div class="line"></div>
               <div class="tech-cont">
-                <span v-for="technology in projects[modalToShow].technologies" :key="technology">{{ technology }}</span>
+                <span v-for="technology in projects[modalToShow].technologies" :key="technology.id">{{ technology }}</span>
               </div>
 
               <h3>Deliverables</h3>
               <div class="line"></div>
               <ul class="deliver-cont">
-                <li v-for="deliverable in projects[modalToShow].deliverables" :key="deliverable">{{ deliverable }}</li>
+                <li v-for="deliverable in projects[modalToShow].deliverables" :key="deliverable.id">{{ deliverable }}</li>
               </ul>
             </div>
           </div>
 
-          <div class="img-showcase" v-for="feature in projects[modalToShow].projectFeatures" :key="feature">
+          <div class="img-showcase" v-for="feature in projects[modalToShow].projectFeatures" :key="feature.id">
             <h4>{{ feature.title }}</h4>
             <p>{{ feature.description }}</p>
             <video v-if="feature.video" :key="feature.video" class="reveal" width="100%" height="100%" autoplay loop>

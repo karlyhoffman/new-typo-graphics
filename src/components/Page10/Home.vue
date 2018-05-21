@@ -23,7 +23,7 @@ import Contact from './Contact'
 import { TimelineMax } from 'gsap'
 
 export default {
-  name: 'App',
+  name: 'Page10',
   components: {
     NavBar,
     About,

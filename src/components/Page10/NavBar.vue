@@ -2,7 +2,7 @@
   <div id="nav-bar" :class=" navModal ? 'modal-open' : '' ">
 
     <ul>
-      <li v-for="link in links" :key="link"><a :href="link.href" @click="scrollTo(link.href, link.modal, $event)">{{ link.title }}</a></li>
+      <li v-for="link in links" :key="link.id"><a :href="link.href" @click="scrollTo(link.href, link.modal, $event)">{{ link.title }}</a></li>
     </ul>
     <div class="line-dec"></div>
 
@@ -145,7 +145,7 @@ export default {
     @include breakpoint(laptop) {
       display: block;
       position: absolute;
-      top: 119px;
+      top: 117px;
       bottom: 0;
       left: 50%;
       background-color: $black;

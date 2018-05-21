@@ -5,7 +5,7 @@
       <h2>{{ title }}</h2>
       <div class="date-cont">
         <ul class="dates">
-          <li v-for="project in projects" :key="project.date">{{ project.date }}</li>
+          <li v-for="project in projects" :key="project.date.id">{{ project.date }}</li>
         </ul>
         <ul class="titles">
           <li v-for="(project, index) in projects" :data-project="`${index + 1}`" :key="project.title">
@@ -14,8 +14,8 @@
         </ul>
       </div>
       <ul class="desc-list">
-        <li v-for="project in projects" :key="project">
-          <span v-for="technology in project.technologies" :key="technology">{{ technology }}</span>
+        <li v-for="project in projects" :key="project.id">
+          <span v-for="technology in project.technologies" :key="technology.id">{{ technology }}</span>
         </li>
       </ul>
     </div>
