@@ -1,12 +1,12 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-         <router-link to="/snap-design">Snap Design, Page 10</router-link>
-      </li>
-    </ul>
+    <h1>{{ title }}</h1>
+    <div class="project-cont" v-for="route in routes" :key="route.id">
+      <router-link :to="route.path">
+        <span>{{route.name}}, Page {{route.page}}</span>
+        <img :src="getImgUrl(route.page)" alt="">
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -15,26 +15,33 @@ export default {
   name: 'Gallery',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      title: 'New Typo Graphics',
+      routes: [
+        {
+          page: 10,
+          name: 'Snap Design',
+          path: '/snap-design'
+        }
+      ]
+    }
+  },
+  methods: {
+    getImgUrl (pageNum) {
+      return require('../assets/img/gallery/page' + pageNum + '.png')
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style scoped lang="scss">
+  .project-cont {
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
 </style>
