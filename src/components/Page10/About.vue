@@ -15,8 +15,9 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '../../assets/styles/common.scss';
+@import '../../assets/styles/vars_page10.scss';
 
 #about {
   order: 2;

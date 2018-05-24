@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="gallery">
     <h1>{{ title }}</h1>
     <div class="project-cont" v-for="route in routes" :key="route.id">
       <router-link :to="route.path">
@@ -36,7 +36,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   @import '../assets/styles/common.scss';
-  .project-cont {
+
+  .gallery {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
 
     a {
       position: relative;

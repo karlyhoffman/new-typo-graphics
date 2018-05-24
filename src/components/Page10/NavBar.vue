@@ -84,6 +84,7 @@ export default {
 
 <style scoped lang="scss">
 @import '../../assets/styles/common.scss';
+@import '../../assets/styles/vars_page10.scss';
 
 #nav-bar {
   order: 0;

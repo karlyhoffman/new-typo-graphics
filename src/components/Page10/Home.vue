@@ -90,6 +90,7 @@ export default {
 
 <style lang="scss">
 @import '../../assets/styles/common.scss';
+@import '../../assets/styles/vars_page10.scss';
 
 #page-10 {
   background-color: $bridal-heath;
@@ -98,6 +99,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: $lato;
   margin: 2.5vw 2.5vw 1vw 2.5vw;
   min-height: 140vw;
 
@@ -144,6 +146,5 @@ export default {
       width: 50vw;
     }
   }
-
 }
 </style>
