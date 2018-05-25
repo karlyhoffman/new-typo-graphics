@@ -3,7 +3,7 @@
     <h1>{{ title }}</h1>
     <div class="project-cont" v-for="route in routes" :key="route.id">
       <router-link :to="route.path">
-        <div class="img" :style="getBgImg(route.page)"></div>
+        <div v-if="route.page" class="img" :style="getBgImg(route.page)"></div>
         <span>{{route.name}}, Page {{route.page}}</span>
       </router-link>
     </div>
@@ -21,6 +21,11 @@ export default {
           page: 10,
           name: 'Snap Design',
           path: '/snap-design'
+        },
+        {
+          // page: 12,
+          name: 'Cranbrook Design',
+          path: '/cranbrook-design'
         }
       ]
     }

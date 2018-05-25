@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+$lato: 'Lato', sans-serif;
+
+$bridal-heath: #FFFAF0;
+$tuft-bush: #FFD7C9;
+$mona-lisa: #FFA799;
+
+a {
+  color: $black;
+
+  &:hover,
+  &:focus {
+    color: $tuft-bush;
+  }
+}
