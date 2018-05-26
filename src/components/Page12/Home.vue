@@ -2,37 +2,45 @@
   <div id="page-12">
     <router-link :to="{ name: 'Gallery' }">Take me home tonight</router-link>
 
-    <!-- <nav-bar/>-->
-    <h1>{{ firstName }} <strong>{{ lastName }}</strong></h1>
-    <!-- <img class="bg-img" src="../../assets/img/page-10/hero_bg.jpg">
-    <about/>
-    <work-history/>
-    <projects/>
-    <contact/> -->
+    <div class="copy-container">
+      <span v-for="section in sections" :key="section.id">{{ section.copy }} </span>
+    </div>
+
   </div>
 </template>
 
 <script>
-
-// import NavBar from './NavBar'
-// import About from './About'
-// import WorkHistory from './WorkHistory'
-// import Projects from './Projects'
-// import Contact from './Contact'
-
 export default {
   name: 'Page12',
   components: {
     // NavBar,
-    // About,
-    // WorkHistory,
-    // Projects,
-    // Contact
+    // About
   },
   data () {
     return {
-      firstName: 'This is',
-      lastName: 'Page 12!'
+      sections: [
+        {
+          copy: 'hi my name is karly hoffman'
+        },
+        {
+          copy: "i'm a web developer based in chicago"
+        },
+        {
+          copy: 'i started working in the web industry in 2012'
+        },
+        {
+          copy: 'as a web editor writing and organizing content for an online retail store'
+        },
+        {
+          copy: 'there i learned html and css and became passionate about programming'
+        },
+        {
+          copy: 'in 2016 i decided to purse a career in web development and enroll in an intensive tech bootcamp'
+        },
+        {
+          copy: 'which provided a solid foundation for me to become the web developer i am today.'
+        }
+      ]
     }
   }
 }
