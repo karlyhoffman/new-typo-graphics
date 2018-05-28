@@ -1,6 +1,6 @@
 <template>
   <div id="page-12">
-    <router-link :to="{ name: 'Gallery' }">Take me home tonight</router-link>
+    <!-- <router-link :to="{ name: 'Gallery' }">Take me home tonight</router-link> -->
 
     <div class="copy-container">
       <span v-for="section in sections" :key="section.id">{{ section.copy }} </span>
@@ -12,10 +12,6 @@
 <script>
 export default {
   name: 'Page12',
-  components: {
-    // NavBar,
-    // About
-  },
   data () {
     return {
       sections: [
@@ -46,9 +42,22 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../../assets/styles/common.scss';
 @import '../../assets/styles/vars_page12.scss';
 
-#page-12 {}
+#page-12 {
+  font-family: $georgia;
+  font-size: 2.2vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .copy-container {
+    text-align: justify;
+    max-width: 35vw;
+  }
+}
 </style>

@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
-$lato: 'Lato', sans-serif;
+$georgia: Georgia, serif;
 
-$bridal-heath: #FFFAF0;
-$tuft-bush: #FFD7C9;
-$mona-lisa: #FFA799;
+// Colors: teal shades, blue to green
+$steel-blue: #538CC3;
+$shakespeare: #58B3CD;
+$tradewind: #57B6B2;
+$puerto-rico: #58CDA7;
+$emerald: #53C37F;
 
 a {
   color: $black;
 
   &:hover,
   &:focus {
-    color: $tuft-bush;
+    color: $emerald;
   }
 }
