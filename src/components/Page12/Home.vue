@@ -58,6 +58,26 @@ export default {
   .copy-container {
     text-align: justify;
     max-width: 35vw;
+
+    span {
+      @include transition(all 0.2s ease-out);
+
+      &:nth-child(5n+0):hover {
+        color: $steel-blue;
+      }
+      &:nth-child(5n+1):hover {
+        color: $shakespeare;
+      }
+      &:nth-child(5n+2):hover {
+        color: $tradewind;
+      }
+      &:nth-child(5n+3):hover {
+        color: $puerto-rico;
+      }
+      &:nth-child(5n+4):hover {
+        color: $emerald;
+      }
+    }
   }
 }
 </style>
