@@ -3,7 +3,12 @@
     <!-- <router-link :to="{ name: 'Gallery' }">Take me home tonight</router-link> -->
 
     <div class="copy-container">
-      <span v-for="section in sections" :key="section.id">{{ section.copy }} </span>
+      <a 
+        v-for="section in sections" 
+        v-on:click="section.isActive = !section.isActive"
+        :class="{ selected: section.isActive }"
+        :key="section.id">{{ section.copy }} 
+      </a>
     </div>
 
   </div>
@@ -16,25 +21,39 @@ export default {
     return {
       sections: [
         {
-          copy: 'hi my name is karly hoffman'
+          name: "about",
+          copy: "hi my name is karly hoffman",
+          isActive: false
         },
         {
-          copy: "i'm a web developer based in chicago"
+          name: "location",
+          copy: "i'm a web developer based in chicago",
+          isActive: false
         },
         {
-          copy: 'i started working in the web industry in 2012'
+          name: "resume",
+          copy: "i started working in the web industry in 2012",
+          isActive: false
         },
         {
-          copy: 'as a web editor writing and organizing content for an online retail store'
+          name: "tennis-warehouse",
+          copy: "as a web editor writing and organizing content for an online retail store",
+          isActive: false
         },
         {
-          copy: 'there i learned html and css and became passionate about programming'
+          name: "programming",
+          copy: "there i learned html and css and became passionate about programming",
+          isActive: false
         },
         {
-          copy: 'in 2016 i decided to purse a career in web development and enroll in an intensive tech bootcamp'
+          name: "general-assembly",
+          copy: "in 2016 i decided to purse a career in web development and enroll in an intensive tech bootcamp",
+          isActive: false
         },
         {
-          copy: 'which provided a solid foundation for me to become the web developer i am today.'
+          name: "projects",
+          copy: "which provided a solid foundation for me to become the web developer i am today.",
+          isActive: false
         }
       ]
     }
@@ -47,8 +66,9 @@ export default {
 @import '../../assets/styles/vars_page12.scss';
 
 #page-12 {
-  font-family: $georgia;
-  font-size: 2.2vw;
+  font-family: $slabo;
+  font-size: 2vw;
+  letter-spacing: 0.1vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -56,10 +76,12 @@ export default {
   align-items: center;
 
   .copy-container {
+    position: relative;
     text-align: justify;
-    max-width: 35vw;
+    max-width: 34vw;
 
-    span {
+    a {
+      cursor: pointer;
       @include transition(all 0.2s ease-out);
 
       &:nth-child(5n+0):hover {
@@ -76,6 +98,10 @@ export default {
       }
       &:nth-child(5n+4):hover {
         color: $emerald;
+      }
+
+      &.selected {
+        font-size: 4vw;
       }
     }
   }
