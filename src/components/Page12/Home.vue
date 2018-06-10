@@ -5,7 +5,7 @@
     <div class="copy-container">
       <a 
         v-for="section in sections" 
-        v-on:click="section.isActive = !section.isActive"
+        @click="expandDetail(section)"
         :class="{ selected: section.isActive }"
         :key="section.id">{{ section.copy }} 
       </a>
@@ -56,6 +56,13 @@ export default {
           isActive: false
         }
       ]
+    }
+  },
+  methods:{
+    expandDetail:function(clicked){
+      this.sections.forEach(function(section) {
+        section === clicked ? section.isActive = true : section.isActive = false;
+      });
     }
   }
 }
