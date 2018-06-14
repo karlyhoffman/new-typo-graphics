@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
     <h1>{{ title }}</h1>
-    <div class="project-cont" v-for="route in routes" :key="route.id">
+    <div class="project" v-for="route in routes" :key="route.id">
       <router-link :to="route.path">
         <div v-if="route.page" class="img" :style="getBgImg(route.page)"></div>
         <span>{{route.name}}, Page {{route.page}}</span>
@@ -23,7 +23,7 @@ export default {
           path: '/snap-design'
         },
         {
-          // page: 12,
+          page: 12,
           name: 'Cranbrook Design',
           path: '/cranbrook-design'
         }
@@ -44,37 +44,60 @@ export default {
 
   .gallery {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2vw 10vw;
 
-    a {
+    h1 {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 2.5vw;
+    }
+
+    .project {
       position: relative;
       display: block;
-      width: 350px;
-      height: 200px;
+      width: 20vw;
+      height: 13vw;
+      text-align: center;
 
-      span {
-        position: absolute;
-        left: 50%;
-        bottom: 2px;
-        @include transform(translateX(-50%));
-        @include transition(all 0.2s ease-out);
-      }
+      @include css3-prefix(box-shadow, 0px 1px 5px 1px rgba(0,0,0,0.2));
+      @include transition(box-shadow 0.2s ease-out);
 
-      .img {
-        display: block;
-        position: relative;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-      }
+      a {
+        color: $black;
 
-      &:nth-child(1) > .img {
-        background-position: 50% 42%;
+        span {
+          z-index: 1;
+          position: absolute;
+          width: 100%;
+          bottom: 1vw;
+
+          @include transform(translateX(-50%));
+          @include transition(all 0.3s ease-out);
+        }
+
+        .img {
+          z-index: 2;
+          display: block;
+          position: relative;
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 100%;
+          height: 100%;
+        }
+
+        &:nth-child(1) > .img {
+          background-position: 50% 42%;
+        }
       }
 
       &:hover {
+        @include css3-prefix(box-shadow, 0px 1px 5px 1px rgba(0,0,0,0.25));
+
         span {
-          bottom: -20px;
+          bottom: -2vw;
         }
       }
     }
