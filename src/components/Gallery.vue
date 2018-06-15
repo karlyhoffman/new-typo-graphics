@@ -47,7 +47,11 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 2vw 10vw;
+    padding: 2vw;
+
+    @include breakpoint(laptop) { 
+      padding: 2vw 10vw;
+    }
 
     h1 {
       width: 100%;
@@ -58,12 +62,24 @@ export default {
     .project {
       position: relative;
       display: block;
-      width: 20vw;
-      height: 13vw;
+      width: 100vw;
+      height: 60vw;
       text-align: center;
+      margin: 8vw 0;
 
       @include css3-prefix(box-shadow, 0px 1px 5px 1px rgba(0,0,0,0.2));
       @include transition(box-shadow 0.2s ease-out);
+      
+      @include breakpoint(phablet) { 
+        width: 40vw;
+        height: 24vw;
+        margin: 0 0 2vw 0;
+      }
+
+      @include breakpoint(laptop) { 
+        width: 20vw;
+        height: 13vw;
+      }
 
       a {
         color: $black;
@@ -72,10 +88,15 @@ export default {
           z-index: 1;
           position: absolute;
           width: 100%;
-          bottom: 1vw;
+          top: -7.5vw;
 
           @include transform(translateX(-50%));
           @include transition(all 0.3s ease-out);
+
+          @include breakpoint(phablet) { 
+            top: auto;
+            bottom: 1vw;
+          }
         }
 
         .img {
