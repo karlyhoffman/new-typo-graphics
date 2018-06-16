@@ -1,7 +1,5 @@
 <template>
   <div id="page-10">
-    <router-link :to="{ name: 'Gallery' }">Take me home tonight</router-link>
-
     <nav-bar/>
     <h1>{{ firstName }} <strong>{{ lastName }}</strong></h1>
     <img class="bg-img" src="../../assets/img/page-10/hero_bg.jpg">

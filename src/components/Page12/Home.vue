@@ -1,7 +1,6 @@
 <template>
   <div id="page-12">
-    <!-- <router-link :to="{ name: 'Gallery' }">Take me home tonight</router-link> -->
-
+    
     <div class="copy-container">
       <a 
         v-for="section in sections" 
