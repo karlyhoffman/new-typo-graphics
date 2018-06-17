@@ -1,10 +1,10 @@
 <template>
   <div class="gallery">
     <h1>{{ title }}</h1>
-    <div class="project" v-for="route in routes" :key="route.id">
-      <router-link :to="route.path">
-        <div v-if="route.page" class="img" :style="getBgImg(route.page)"></div>
-        <span>{{route.name}}, Page {{route.page}}</span>
+    <div class="project" v-for="project in projects" :key="project.id" v-if="project.page">
+      <router-link :to="project.path">
+        <div v-if="project.page" class="img" :style="getBgImg(project.page)"></div>
+        <span>{{project.name}}, Page {{project.page}}</span>
       </router-link>
     </div>
   </div>
@@ -13,21 +13,19 @@
 <script>
 export default {
   name: 'Gallery',
+  created: function() {
+    this.$router.options.routes.forEach(route => {
+        this.projects.push({
+            name: route.name, 
+            path: route.path,
+            page: route.page
+        })
+    })
+  },
   data () {
     return {
       title: 'New Typo Graphics',
-      routes: [
-        {
-          page: 10,
-          name: 'Snap Design',
-          path: '/snap-design'
-        },
-        {
-          page: 12,
-          name: 'Cranbrook Design',
-          path: '/cranbrook-design'
-        }
-      ]
+      projects: []
     }
   },
   methods: {

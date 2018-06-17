@@ -15,12 +15,14 @@ export default new Router({
     },
     {
       path: '/snap-design',
-      name: 'Page10',
+      name: 'Snap Design',
+      page: 10,
       component: Page10
     },
     {
       path: '/cranbrook-design',
-      name: 'Page12',
+      name: 'Cranbrook Design',
+      page: 12,
       component: Page12
     }
   ]
