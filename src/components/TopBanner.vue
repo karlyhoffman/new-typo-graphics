@@ -1,6 +1,6 @@
 <template>
   <div id="top-banner">
-    <router-link :to="{ name: 'Gallery' }">Take me home tonight</router-link>
+    <router-link :to="{ name: 'Gallery' }">Back to Projects</router-link>
   </div>
 </template>
 
@@ -11,6 +11,9 @@ export default {
     return {
     }
   },
+  mounted: function() {
+    // hide top banner after page load, if user scrolls to top show
+  },
   methods:{
     hideBanner:function(){
 
@@ -20,9 +23,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import '../../assets/styles/common.scss';
+@import '../assets/styles/common.scss';
 
 #top-banner {
-  
+  width: 100vw;
+  height: 5vw;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 4.75vw;
+
+  @include transition(all .25s ease-out);
+
+  &.hide {
+    @include transform(translateY(-5vw));
+  }
 }
 </style>
