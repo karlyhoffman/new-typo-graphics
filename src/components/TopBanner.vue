@@ -1,5 +1,5 @@
 <template>
-  <div id="top-banner">
+  <div id="top-banner" :class="{ hide: !isActive }">
     <router-link :to="{ name: 'Gallery' }">Back to Projects</router-link>
   </div>
 </template>
@@ -9,14 +9,24 @@ export default {
   name: 'TopBanner',
   data () {
     return {
+      idleTimer: null,
+      isActive: true
     }
   },
   mounted: function() {
-    // hide top banner after page load, if user scrolls to top show
+    this.showBanner();
+    window.addEventListener('mousemove', this.showBanner);
   },
   methods:{
-    hideBanner:function(){
-
+    showBanner:function(){
+      clearTimeout(this.idleTimer);
+      this.isActive = true;
+      console.log(this.isActive);
+      
+      this.idleTimer = setTimeout(function() {
+        this.isActive = false;
+        console.log(this.isActive);
+      }, 2000);
     }
   }
 }
