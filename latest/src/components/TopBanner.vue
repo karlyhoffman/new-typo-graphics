@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import Vue from 'vue'
+
 export default {
   name: 'TopBanner',
   data () {
@@ -13,19 +15,19 @@ export default {
       isActive: true
     }
   },
-  mounted: function() {
+  mounted: function() {    
     this.showBanner();
-    window.addEventListener('mousemove', this.showBanner);
+    // window.addEventListener('mousemove', this.showBanner);
   },
   methods:{
     showBanner:function(){
       clearTimeout(this.idleTimer);
-      this.isActive = true;
-      console.log(this.isActive);
-      
+      // this.isActive = true;
+      Vue.set(this.$data, 'isActive', true)
+
       this.idleTimer = setTimeout(function() {
-        this.isActive = false;
-        console.log(this.isActive);
+        // this.isActive = false;
+        Vue.set(this.$data, 'isActive', false)
       }, 2000);
     }
   }
