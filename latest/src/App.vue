@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <top-banner v-if="$router.currentRoute.name !=='Gallery'"></top-banner>
     <router-view/>
   </div>
@@ -22,6 +22,7 @@ body {
 }
 
 #app {
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #282828;

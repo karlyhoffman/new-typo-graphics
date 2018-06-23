@@ -35,11 +35,15 @@ export default {
 @import '../assets/styles/common.scss';
 
 #top-banner {
+  background-color: $white;
+  position: absolute;
+  top: 0;
   width: 100vw;
   height: 5vw;
   text-align: center;
   text-transform: uppercase;
   line-height: 4.75vw;
+  z-index: 100;
 
   @include transition(all .25s ease-out);
 
