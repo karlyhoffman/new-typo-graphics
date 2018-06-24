@@ -1,12 +1,14 @@
 <template>
   <div id="page-10">
-    <nav-bar/>
-    <h1>{{ firstName }} <strong>{{ lastName }}</strong></h1>
-    <img class="bg-img" src="../../assets/img/page-10/hero_bg.jpg">
-    <about/>
-    <work-history/>
-    <projects/>
-    <contact/>
+    <div class="container">
+      <nav-bar/>
+      <h1>{{ firstName }} <strong>{{ lastName }}</strong></h1>
+      <img class="bg-img" src="../../assets/img/page-10/hero_bg.jpg">
+      <about/>
+      <work-history/>
+      <projects/>
+      <contact/>
+    </div>
   </div>
 </template>
 
@@ -91,57 +93,61 @@ export default {
 @import '../../assets/styles/vars_page10.scss';
 
 #page-10 {
-  background-color: $bridal-heath;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: $lato;
-  margin: 2.5vw 2.5vw 1vw 2.5vw;
-  min-height: 140vw;
+  padding-top: 2.5vw;
 
-  h1 {
-    order: 1;
-    z-index: 2;
-    color: $mona-lisa;
-    font-size: 2.25rem;
-    font-weight: 400;
-    margin: 0 auto;
-    padding-top: 50px;
+  .container {
+    background-color: $bridal-heath;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: $lato;
+    min-height: 140vw;
+    margin: 0 2.5vw 1vw 2.5vw;
 
-    strong {
-      font-weight: 900;
-      letter-spacing: 1.5px;
+    h1 {
+      order: 1;
+      z-index: 2;
+      color: $mona-lisa;
+      font-size: 2.25rem;
+      font-weight: 400;
+      margin: 0 auto;
+      padding-top: 50px;
+
+      strong {
+        font-weight: 900;
+        letter-spacing: 1.5px;
+      }
+
+      @include breakpoint(tablet) {
+        position: absolute;
+        top: 40vw;
+        font-size: 3.5rem;
+        padding-top: 0;
+      }
+      @include breakpoint(laptop) {
+        top: 55vw;
+      }
     }
 
-    @include breakpoint(tablet) {
+    .bg-img {
       position: absolute;
-      top: 40vw;
-      font-size: 3.5rem;
-      padding-top: 0;
-    }
-    @include breakpoint(laptop) {
-      top: 55vw;
-    }
-  }
+      top: 7.5vw;
+      width: 75vw;
+      max-width: 450px;
+      opacity: .85;
+      z-index: 1;
 
-  .bg-img {
-    position: absolute;
-    top: 7.5vw;
-    width: 75vw;
-    max-width: 450px;
-    opacity: .85;
-    z-index: 1;
-
-    @include breakpoint(laptop) {
-      position: relative;
-      top: 0;
-      width: 40vw;
-      max-width: 100%;
-    }
-    @include breakpoint(tv) {
-      width: 50vw;
+      @include breakpoint(laptop) {
+        position: relative;
+        top: 0;
+        width: 40vw;
+        max-width: 100%;
+      }
+      @include breakpoint(tv) {
+        width: 50vw;
+      }
     }
   }
 }
