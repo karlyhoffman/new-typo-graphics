@@ -16,16 +16,19 @@ export default {
   mounted: function() {    
     this.showBanner();
     window.addEventListener('mousemove', this.showBanner);
+    window.addEventListener('scroll', this.showBanner);
   },
   methods:{
-    showBanner:function(){
-      const vm = this;
-      clearTimeout(this.idleTimer);
-      vm.$set(vm, 'isActive', true)
+    showBanner:function(e){
+      if (window.pageYOffset === 0) {
+        const vm = this;
+        clearTimeout(this.idleTimer);
+        vm.$set(vm, 'isActive', true)
 
-      this.idleTimer = setTimeout(function() {
-        vm.$set(vm, 'isActive', false)
-      }, 2000);
+        this.idleTimer = setTimeout(function() {
+          vm.$set(vm, 'isActive', false)
+        }, 2000);
+      }
     }
   }
 }
