@@ -15,17 +15,3 @@ export default {
   }
 }
 </script>
-
-<style>
-body {
-  margin: 0;
-  padding: 0;
-}
-
-#app {
-  position: relative;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #282828;
-}
-</style>

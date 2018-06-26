@@ -41,7 +41,7 @@ export default {
   @import '../assets/styles/common.scss';
 
   .gallery {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: $montserrat;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -53,7 +53,10 @@ export default {
 
     h1 {
       width: 100%;
+      font-size: 2rem;
       text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
       padding-bottom: 2.5vw;
     }
 

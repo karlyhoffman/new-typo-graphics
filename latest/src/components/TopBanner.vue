@@ -39,6 +39,8 @@ export default {
 
 #top-banner {
   background-color: $white;
+  font-family: $montserrat;
+  font-weight: 300;
   position: absolute;
   top: 0;
   width: 100vw;
