@@ -1,6 +1,8 @@
 <template>
   <div id="top-banner" :class="{ hide: !isActive }">
     <router-link :to="{ name: 'Gallery' }">Back to Projects</router-link>
+    <span class="ntg">New Typo Graphics</span>
+    <span>Next Project</span>
   </div>
 </template>
 
