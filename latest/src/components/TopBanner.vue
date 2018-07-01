@@ -1,8 +1,8 @@
 <template>
   <div id="top-banner" :class="{ hide: !isActive }">
-    <router-link :to="{ name: 'Gallery' }">Back to Projects</router-link>
+    <router-link :to="{ name: 'Gallery' }">Back<span> to Projects</span></router-link>
     <span class="ntg">New Typo Graphics</span>
-    <span>Next Project</span>
+    <router-link :to="{ name: 'Gallery' }">Next<span> Project</span></router-link>
   </div>
 </template>
 
@@ -51,10 +51,11 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  height: 5vw;
+  height: 15vw;
+  font-size: 3.5vw;
   text-align: center;
   text-transform: uppercase;
-  line-height: 4.75vw;
+  line-height: 1;
   padding: 0 2vw;
   z-index: 100;
 
@@ -62,23 +63,24 @@ export default {
   @include transition(all .25s ease-out);
 
   &.hide {
-    @include transform(translateY(-5vw));
+    @include transform(translateY(-15vw));
     @include css3-prefix(box-shadow, 0px -5px 40px 0px rgba(0,0,0,0));
   }
 
-  &:not(.ntg) {
-    font-size: 0.9rem;
-  }
-
   .ntg {
-    font-size: 1.5rem;
-    letter-spacing: -0.025rem;
+    font-size: 5vw;
   }
 
   a {
     position: relative;
     color: $white;
+    padding: 1vw 0;
+
     @include transition(all .25s ease-out);
+
+    span {
+      display: none;
+    }
 
     &::after {
       content: "";
@@ -86,7 +88,7 @@ export default {
       position: absolute;
       display: block;
       height: 1px;
-      bottom: 1.25vw;
+      bottom: 0.5vw;
       transform-origin: center;
       left: 50%;
       right: 50%;
@@ -102,6 +104,27 @@ export default {
         left: 0;
         right: 0;
       }
+    }
+  }
+
+  @include breakpoint(phablet) {
+    height: 5vw;
+
+    &.hide {
+      @include transform(translateY(-5vw));
+    }
+
+    a > span {
+      display: inline;
+    }
+
+    &:not(.ntg) {
+      font-size: 0.9rem;
+    }
+
+    .ntg {
+      font-size: 1.5rem;
+      letter-spacing: -0.025rem;
     }
   }
 }
