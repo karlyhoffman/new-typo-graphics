@@ -2,7 +2,7 @@
   <div id="top-banner" :class="{ hide: !isActive }">
     <router-link :to="{ name: 'Gallery' }">Back<span> to Projects</span></router-link>
     <span class="ntg">New Typo Graphics</span>
-    <router-link :to="{ name: 'Gallery' }">Next<span> Project</span></router-link>
+    <router-link :to="nextProject">Next<span> Project</span></router-link>
   </div>
 </template>
 
@@ -12,8 +12,16 @@ export default {
   data () {
     return {
       idleTimer: null,
-      isActive: true
+      isActive: true,
+      nextProject: ''
     }
+  },
+  created: function() {    
+    this.$router.options.routes.forEach((route, index) => {
+      if (this.$router.currentRoute.path == route.path) {
+        this.nextProject = this.$router.options.routes[index + 1].path;
+      }
+    });
   },
   mounted: function() {    
     this.showBanner();
