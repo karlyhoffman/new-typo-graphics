@@ -2,7 +2,9 @@
   <div id="top-banner" :class="{ hide: !isActive }">
     <router-link :to="{ name: 'Gallery' }">Back<span> to Projects</span></router-link>
     <span class="ntg">New Typo Graphics</span>
-    <router-link :to="nextProject">Next<span> Project</span></router-link>
+    <span>
+      <router-link :to="nextProject" v-if="nextProject.length > 0" :key="nextProject.id">Next<span> Project</span></router-link>
+    </span>
   </div>
 </template>
 
@@ -16,9 +18,18 @@ export default {
       nextProject: ''
     }
   },
+  watch:{
+    $route (to, from){
+        this.nextProject = '';
+    }
+  }, 
   created: function() {    
     this.$router.options.routes.forEach((route, index) => {
-      if (this.$router.currentRoute.path == route.path) {
+      const lastProject = this.$router.options.routes[this.$router.options.routes.length - 1].path;
+
+      if (this.$router.currentRoute.path === lastProject) {
+        this.nextProject = '';
+      } else if (this.$router.currentRoute.path === route.path) {
         this.nextProject = this.$router.options.routes[index + 1].path;
       }
     });
@@ -26,7 +37,7 @@ export default {
   mounted: function() {    
     this.showBanner();
     window.addEventListener('mousemove', this.showBanner);
-    window.addEventListener('scroll', this.showBanner);
+    window.addEventListener('scroll', this.showBanner);    
   },
   methods:{
     showBanner:function(e){
