@@ -1,8 +1,8 @@
 <template>
   <div id="top-banner" :class="{ hide: !isActive }">
-    <router-link :to="{ name: 'Gallery' }">Back<span> to Projects</span></router-link>
+    <router-link :to="{ name: 'Gallery' }" class="link">Back<span> to Projects</span></router-link>
     <span class="ntg">New Typo Graphics</span>
-    <span>
+    <span class="link">
       <router-link :to="nextProject" v-if="nextProject.length > 0" :key="nextProject.id">Next<span> Project</span></router-link>
     </span>
   </div>
@@ -72,7 +72,6 @@ export default {
   right: 0;
   height: 15vw;
   font-size: 3.5vw;
-  text-align: center;
   text-transform: uppercase;
   line-height: 1;
   padding: 0 2vw;
@@ -86,8 +85,22 @@ export default {
     @include css3-prefix(box-shadow, 0px -5px 40px 0px rgba(0,0,0,0));
   }
 
+  .link {
+    flex: 1;
+
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
   .ntg {
+    flex: 2;
     font-size: 5vw;
+    text-align: center;
   }
 
   a {
