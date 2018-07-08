@@ -60,7 +60,11 @@ export default {
   methods:{
     expandDetail:function(clicked){
       this.sections.forEach(function(section) {
-        section === clicked ? section.isActive = true : section.isActive = false;
+        if (section === clicked && section.isActive) {
+          section.isActive = !section.isActive;
+        } else {
+          section === clicked ? section.isActive = true : section.isActive = false;
+        }
       });
     }
   }
