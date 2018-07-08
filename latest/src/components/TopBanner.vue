@@ -1,7 +1,11 @@
 <template>
   <div id="top-banner" :class="{ hide: !isActive }">
-    <router-link :to="{ name: 'Gallery' }" class="link">Back<span> to Projects</span></router-link>
-    <span class="ntg">New Typo Graphics</span>
+    <span class="link">
+      <router-link :to="prevProject" v-if="prevProject.length > 0" :key="prevProject.id">Previous<span> Project</span></router-link>
+    </span>
+    <span class="ntg">
+      <router-link :to="{ name: 'Gallery' }" class="link">New Typo Graphics</router-link>
+    </span>
     <span class="link">
       <router-link :to="nextProject" v-if="nextProject.length > 0" :key="nextProject.id">Next<span> Project</span></router-link>
     </span>
@@ -15,31 +19,42 @@ export default {
     return {
       idleTimer: null,
       isActive: true,
+      prevProject: '',
       nextProject: ''
     }
   },
   watch:{
     $route (to, from){
-        this.nextProject = '';
+      this.updateLinks();
     }
-  }, 
-  created: function() {    
-    this.$router.options.routes.forEach((route, index) => {
-      const lastProject = this.$router.options.routes[this.$router.options.routes.length - 1].path;
-
-      if (this.$router.currentRoute.path === lastProject) {
-        this.nextProject = '';
-      } else if (this.$router.currentRoute.path === route.path) {
-        this.nextProject = this.$router.options.routes[index + 1].path;
-      }
-    });
   },
+  created: function () {
+    this.updateLinks();
+  }, 
   mounted: function() {    
     this.showBanner();
     window.addEventListener('mousemove', this.showBanner);
     window.addEventListener('scroll', this.showBanner);    
   },
   methods:{
+    updateLinks:function() {
+      this.prevProject = '';
+      this.nextProject = '';
+
+      this.$router.options.routes.forEach((route, index) => {
+        const firstProject = this.$router.options.routes[1].path;
+        const lastProject = this.$router.options.routes[this.$router.options.routes.length - 1].path;        
+        
+        if (this.$router.currentRoute.path === firstProject) {
+          this.nextProject = this.$router.options.routes[2].path;
+        } else if (this.$router.currentRoute.path === lastProject) {
+          this.prevProject = this.$router.options.routes[this.$router.options.routes.length - 2].path;
+        } else {
+          this.prevProject = this.$router.options.routes[index - 1].path;
+          this.nextProject = this.$router.options.routes[index + 1].path;
+        }
+      });
+    },
     showBanner:function(e){
       if (window.pageYOffset === 0) {
         const vm = this;
