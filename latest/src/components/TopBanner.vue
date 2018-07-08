@@ -34,7 +34,7 @@ export default {
   mounted: function() {    
     this.showBanner();
     window.addEventListener('mousemove', this.showBanner);
-    window.addEventListener('scroll', this.showBanner);    
+    window.addEventListener('scroll', this.showBanner);
   },
   methods:{
     updateLinks:function() {
@@ -55,7 +55,7 @@ export default {
         }
       });
     },
-    showBanner:function(e){
+    showBanner:function(){
       if (window.pageYOffset === 0) {
         const vm = this;
         clearTimeout(this.idleTimer);

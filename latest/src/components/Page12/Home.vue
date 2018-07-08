@@ -73,7 +73,8 @@ export default {
 
 #page-12 {
   font-family: $slabo;
-  font-size: 2vw;
+  font-size: 4vw;
+  line-height: 7vw;
   letter-spacing: 0.1vw;
   min-height: 100vh;
   display: flex;
@@ -81,10 +82,19 @@ export default {
   justify-content: center;
   align-items: center;
 
+  @include breakpoint(tablet) {
+    font-size: 2vw;
+    line-height: 2.5vw;
+  }
+
   .copy-container {
     position: relative;
     text-align: justify;
-    max-width: 34vw;
+    max-width: 90vw;
+
+    @include breakpoint(tablet) {
+      max-width: 34vw;
+    }
 
     a {
       cursor: pointer;
@@ -107,7 +117,11 @@ export default {
       }
 
       &.selected {
-        font-size: 4vw;
+        font-size: 7vw;
+
+        @include breakpoint(tablet) {
+          font-size: 4vw;
+        }
       }
     }
   }
