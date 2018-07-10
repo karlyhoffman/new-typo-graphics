@@ -66,6 +66,9 @@ export default {
           section === clicked ? section.isActive = true : section.isActive = false;
         }
       });
+      
+      const hiddenSections = this.sections.filter(e => !e.isActive);
+      hiddenSections.length === this.sections.length ? console.log('dont hide') : console.log('hide');
     }
   }
 }
@@ -80,11 +83,12 @@ export default {
   font-size: 4vw;
   line-height: 7vw;
   letter-spacing: 0.1vw;
-  min-height: 100vh;
+  min-height: 105vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 2.5vh;
 
   @include breakpoint(tablet) {
     font-size: 2vw;
@@ -126,6 +130,10 @@ export default {
         @include breakpoint(tablet) {
           font-size: 4vw;
         }
+      }
+
+      &.hide {
+        opacity: 0;
       }
     }
   }
