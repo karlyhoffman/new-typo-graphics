@@ -4,8 +4,9 @@
     <div class="copy-container">
       <a 
         v-for="section in sections" 
-        @click="expandDetail(section)"
-        :class="{ selected: section.isActive }"
+        @mouseover="enterDetail(section)" 
+        @mouseleave="leaveDetail(section)"
+        :class="{ hidden: section.hide }"
         :key="section.id">{{ section.copy }} 
       </a>
     </div>
@@ -22,53 +23,51 @@ export default {
         {
           name: "about",
           copy: "hi my name is karly hoffman",
-          isActive: false
+          hide: false
         },
         {
           name: "location",
           copy: "i'm a web developer based in chicago",
-          isActive: false
+          hide: false
         },
         {
           name: "resume",
           copy: "i started working in the web industry in 2012",
-          isActive: false
+          hide: false
         },
         {
           name: "tennis-warehouse",
           copy: "as a web editor writing and organizing content for an online retail store",
-          isActive: false
+          hide: false
         },
         {
           name: "programming",
           copy: "there i learned html and css and became passionate about programming",
-          isActive: false
+          hide: false
         },
         {
           name: "general-assembly",
           copy: "in 2016 i decided to purse a career in web development and enroll in an intensive tech bootcamp",
-          isActive: false
+          hide: false
         },
         {
           name: "projects",
           copy: "which provided a solid foundation for me to become the web developer i am today.",
-          isActive: false
+          hide: false
         }
       ]
     }
   },
   methods:{
-    expandDetail:function(clicked){
-      this.sections.forEach(function(section) {
-        if (section === clicked && section.isActive) {
-          section.isActive = !section.isActive;
-        } else {
-          section === clicked ? section.isActive = true : section.isActive = false;
-        }
+    enterDetail:function(hoverSection) {
+      this.sections.forEach(section => {
+        if (section !== hoverSection) section.hide = true; 
       });
-      
-      const hiddenSections = this.sections.filter(e => !e.isActive);
-      hiddenSections.length === this.sections.length ? console.log('dont hide') : console.log('hide');
+    },
+    leaveDetail:function(hoverSection) {
+      this.sections.forEach(section => {
+        section.hide = false; 
+      });
     }
   }
 }
@@ -81,7 +80,7 @@ export default {
 #page-12 {
   font-family: $slabo;
   font-size: 4vw;
-  line-height: 7vw;
+  line-height: 6vw;
   letter-spacing: 0.1vw;
   min-height: 105vh;
   display: flex;
@@ -98,7 +97,7 @@ export default {
   .copy-container {
     position: relative;
     text-align: justify;
-    max-width: 90vw;
+    max-width: 75vw;
 
     @include breakpoint(tablet) {
       max-width: 34vw;
@@ -124,16 +123,8 @@ export default {
         color: $emerald;
       }
 
-      &.selected {
-        font-size: 7vw;
-
-        @include breakpoint(tablet) {
-          font-size: 4vw;
-        }
-      }
-
-      &.hide {
-        opacity: 0;
+      &.hidden {
+        opacity: 0.2;
       }
     }
   }
