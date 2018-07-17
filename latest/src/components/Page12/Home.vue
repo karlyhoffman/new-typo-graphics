@@ -6,8 +6,13 @@
         v-for="section in sections" 
         @mouseover="enterDetail(section)" 
         @mouseleave="leaveDetail(section)"
-        :class="{ hidden: section.hide }"
-        :key="section.id">{{ section.copy }} 
+        :class="{ 
+          active: section.isActive,
+          hidden: section.hide
+        }"
+        :data-detail="section.detail"
+        :key="section.id">
+        {{ section.copy }}
       </a>
     </div>
 
@@ -23,36 +28,50 @@ export default {
         {
           name: "about",
           copy: "hi my name is karly hoffman",
+          detail: "interests: record collecting, road trips, puns",
+          isActive: false,
           hide: false
         },
         {
           name: "location",
           copy: "i'm a web developer based in chicago",
+          detail: "since 2016",
+          isActive: false,
           hide: false
         },
         {
           name: "resume",
           copy: "i started working in the web industry in 2012",
+          detail: "no intention of leaving",
+          isActive: false,
           hide: false
         },
         {
           name: "tennis-warehouse",
-          copy: "as a web editor writing and organizing content for an online retail store",
+          copy: "as a web editor writing and organizing content for an ecommerce website",
+          detail: "Tennis Warehouse, the world's largest online retail tennis store",
+          isActive: false,
           hide: false
         },
         {
           name: "programming",
           copy: "there i learned html and css and became passionate about programming",
+          detail: "started taking web development courses online through UCSD and Team Treehouse",
+          isActive: false,
           hide: false
         },
         {
           name: "general-assembly",
           copy: "in 2016 i decided to purse a career in web development and enroll in an intensive tech bootcamp",
+          detail: "12-week course covering both front-end and back-end technologies",
+          isActive: false,
           hide: false
         },
         {
           name: "projects",
           copy: "which provided a solid foundation for me to become the web developer i am today.",
+          detail: "[github links here]",
+          isActive: false,
           hide: false
         }
       ]
@@ -61,12 +80,13 @@ export default {
   methods:{
     enterDetail:function(hoverSection) {
       this.sections.forEach(section => {
-        if (section !== hoverSection) section.hide = true; 
+        section !== hoverSection ? section.hide = true : section.isActive = true; 
       });
     },
     leaveDetail:function(hoverSection) {
       this.sections.forEach(section => {
         section.hide = false; 
+        section.isActive = false; 
       });
     }
   }
@@ -104,23 +124,94 @@ export default {
     }
 
     a {
+      position: relative;
       cursor: pointer;
+
       @include transition(all 0.2s ease-out);
 
-      &:nth-child(5n+0):hover {
-        color: $steel-blue;
+      &::after {
+        opacity: 0;
+        position: absolute;
+        content: attr(data-detail);
+        color: $black;
+        font-size: 18px;
+        line-height: 1;
+        white-space: nowrap;
       }
-      &:nth-child(5n+1):hover {
-        color: $shakespeare;
+
+      &.active::after {
+        opacity: 1;
       }
-      &:nth-child(5n+2):hover {
-        color: $tradewind;
+
+      &:nth-child(1) {
+        &:hover {
+          color: $steel-blue;
+        }
+
+        &::after {
+          top: -5vh;
+          left: -20vw;
+        }
       }
-      &:nth-child(5n+3):hover {
-        color: $puerto-rico;
+
+      &:nth-child(2) {
+        &:hover {
+          color: $shakespeare;
+        }
+
+        &::after {
+          left: 10vw;
+        }
       }
-      &:nth-child(5n+4):hover {
-        color: $emerald;
+
+      &:nth-child(3) {
+        &:hover {
+          color: $tradewind;
+        }
+
+        &::after {
+          left: 10vw;
+        }
+      }
+
+      &:nth-child(4) {
+        &:hover {
+          color: $puerto-rico;
+        }
+
+        &::after {
+          left: 10vw;
+        }
+      }
+
+      &:nth-child(5) {
+        &:hover {
+          color: $emerald;
+        }
+
+        &::after {
+          left: 10vw;
+        }
+      }
+
+      &:nth-child(6) {
+        &:hover {
+          color: $puerto-rico;
+        }
+
+        &::after {
+          left: 10vw;
+        }
+      }
+
+      &:nth-child(7) {
+        &:hover {
+          color: $tradewind;
+        }
+
+        &::after {
+          left: 10vw;
+        }
       }
 
       &.hidden {
