@@ -28,7 +28,7 @@ export default {
         {
           name: "about",
           copy: "hi my name is karly hoffman",
-          detail: "interests: record collecting, road trips, puns",
+          detail: "interests: eating, records + concerts, road trips, puns",
           isActive: false,
           hide: false
         },
@@ -70,7 +70,7 @@ export default {
         {
           name: "projects",
           copy: "which provided a solid foundation for me to become the web developer i am today.",
-          detail: "[github links here]",
+          detail: "github.com/karlyhoffman",
           isActive: false,
           hide: false
         }
@@ -120,7 +120,7 @@ export default {
     max-width: 75vw;
 
     @include breakpoint(tablet) {
-      max-width: 34vw;
+      max-width: 35vw;
     }
 
     a {
@@ -141,6 +141,8 @@ export default {
 
       &.active::after {
         opacity: 1;
+
+        @include transition(all 0.2s ease-out);
       }
 
       &:nth-child(1) {
@@ -149,8 +151,10 @@ export default {
         }
 
         &::after {
-          top: -5vh;
-          left: -20vw;
+          top: 15vw;
+          left: -23vw;
+
+          @include transform(rotate(-0.25turn));
         }
       }
 
@@ -160,7 +164,8 @@ export default {
         }
 
         &::after {
-          left: 10vw;
+          top: 2.75vw;
+          left: 12vw;
         }
       }
 
@@ -170,7 +175,8 @@ export default {
         }
 
         &::after {
-          left: 10vw;
+          top: 35vw;
+          left: -16vw;
         }
       }
 
@@ -180,7 +186,8 @@ export default {
         }
 
         &::after {
-          left: 10vw;
+          top: -10vw;
+          left: -55vw;
         }
       }
 
@@ -190,7 +197,8 @@ export default {
         }
 
         &::after {
-          left: 10vw;
+          top: 22vw;
+          left: -7.5vw;
         }
       }
 
@@ -200,7 +208,10 @@ export default {
         }
 
         &::after {
-          left: 10vw;
+          top: -20vw;
+          left: -25vw;
+
+          @include transform(rotate(-0.12turn));
         }
       }
 
@@ -210,7 +221,8 @@ export default {
         }
 
         &::after {
-          left: 10vw;
+          top: -10vw;
+          left: 16vw;
         }
       }
 
