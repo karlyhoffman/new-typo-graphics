@@ -130,6 +130,7 @@ export default {
       @include transition(all 0.2s ease-out);
 
       &::after {
+        pointer-events: none;
         opacity: 0;
         position: absolute;
         content: attr(data-detail);
