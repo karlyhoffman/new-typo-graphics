@@ -130,20 +130,23 @@ export default {
       @include transition(all 0.2s ease-out);
 
       &::after {
-        pointer-events: none;
-        opacity: 0;
-        position: absolute;
         content: attr(data-detail);
+        pointer-events: none;
+        position: absolute;
         color: $black;
         font-size: 18px;
         line-height: 1;
         white-space: nowrap;
+        opacity: 0;
+
+        @include transform(translateY(5px));
       }
 
       &.active::after {
         opacity: 1;
 
-        @include transition(all 0.2s ease-out);
+        @include transform(translateY(0));
+        @include transition(opacity 1s ease-out, transform 0.6s ease-out);
       }
 
       &:nth-child(1) {
@@ -176,7 +179,7 @@ export default {
         }
 
         &::after {
-          top: 35vw;
+          top: 33vw;
           left: -16vw;
         }
       }
@@ -198,8 +201,8 @@ export default {
         }
 
         &::after {
-          top: 22vw;
-          left: -7.5vw;
+          top: 20vw;
+          left: 10vw;
         }
       }
 
