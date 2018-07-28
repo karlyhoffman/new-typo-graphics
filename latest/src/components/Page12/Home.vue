@@ -111,7 +111,7 @@ export default {
 
   @include breakpoint(phablet) {
     font-size: 3vw;
-    line-height: 2.5vw;
+    line-height: 3.75vw;
   }
 
   @include breakpoint(laptop) {
@@ -137,55 +137,6 @@ export default {
       cursor: pointer;
 
       @include transition(all 0.2s ease-out);
-
-      &:nth-child(1) {
-        &::after {
-          top: -25vw;
-          left: 22vw;
-        }
-      }
-
-      &:nth-child(2) {
-        &::after {
-          top: -20vw;
-          left: -25vw;
-        }
-      }
-
-      &:nth-child(3) {
-        &::after {
-          top: -30vw;
-          left: -37vw;
-        }
-      }
-
-      &:nth-child(4) {
-        &::after {
-          top: -40vw;
-          left: -55vw;
-        }
-      }
-
-      &:nth-child(5) {
-        &::after {
-          top: 60vw;
-          left: -55vw;
-        }
-      }
-
-      &:nth-child(6) {
-        &::after {
-          top: 55vw;
-          left: -42vw;
-        }
-      }
-
-      &:nth-child(7) {
-        &::after {
-          top: 50vw;
-          left: -15vw;
-        }
-      }
 
       &::after {
         content: attr(data-detail);
@@ -221,11 +172,21 @@ export default {
         &:hover {
           color: $steel-blue;
         }
+
+        &::after {
+          top: -25vw;
+          left: 22vw;
+        }
       }
 
       &:nth-child(2) {
         &:hover {
           color: $shakespeare;
+        }
+
+        &::after {
+          top: -20vw;
+          left: -25vw;
         }
       }
 
@@ -233,11 +194,21 @@ export default {
         &:hover {
           color: $tradewind;
         }
+
+        &::after {
+          top: -30vw;
+          left: -37vw;
+        }
       }
 
       &:nth-child(4) {
         &:hover {
           color: $puerto-rico;
+        }
+
+        &::after {
+          top: -40vw;
+          left: -55vw;
         }
       }
 
@@ -245,17 +216,83 @@ export default {
         &:hover {
           color: $emerald;
         }
+
+        &::after {
+          top: 60vw;
+          left: -55vw;
+        }
       }
 
       &:nth-child(6) {
         &:hover {
           color: $puerto-rico;
         }
+
+        &::after {
+          top: 55vw;
+          left: -42vw;
+        }
       }
 
       &:nth-child(7) {
         &:hover {
           color: $tradewind;
+        }
+
+        &::after {
+          top: 50vw;
+          left: -15vw;
+        }
+      }
+
+      @include breakpoint(phablet) {
+        &:nth-child(1) {
+          &::after {
+            top: -10vw;
+            left: 4vw;
+          }
+        }
+
+        &:nth-child(2) {
+          &::after {
+            top: -10vw;
+            left: -18vw;
+          }
+        }
+
+        &:nth-child(3) {
+          &::after {
+            top: -14vw;
+            left: -22.5vw;
+          }
+        }
+
+        &:nth-child(4) {
+          &::after {
+            top: -18vw;
+            left: -50vw;
+          }
+        }
+
+        &:nth-child(5) {
+          &::after {
+            top: 34vw;
+            left: -45vw;
+          }
+        }
+
+        &:nth-child(6) {
+          &::after {
+            top: 27vw;
+            left: -20vw;
+          }
+        }
+
+        &:nth-child(7) {
+          &::after {
+            top: 20vw;
+            left: -30vw;
+          }
         }
       }
 
