@@ -99,7 +99,7 @@ export default {
 
 #page-12 {
   font-family: $slabo;
-  font-size: 4vw;
+  font-size: 4.5vw;
   line-height: 6vw;
   letter-spacing: 0.1vw;
   min-height: 105vh;
@@ -107,9 +107,14 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 2.5vh;
+  padding-top: 10vh;
 
-  @include breakpoint(tablet) {
+  @include breakpoint(phablet) {
+    font-size: 3vw;
+    line-height: 2.5vw;
+  }
+
+  @include breakpoint(laptop) {
     font-size: 2vw;
     line-height: 2.5vw;
   }
@@ -119,7 +124,11 @@ export default {
     text-align: justify;
     max-width: 75vw;
 
-    @include breakpoint(tablet) {
+    @include breakpoint(phablet) {
+      max-width: 55vw;
+    }
+
+    @include breakpoint(laptop) {
       max-width: 35vw;
     }
 
@@ -129,15 +138,74 @@ export default {
 
       @include transition(all 0.2s ease-out);
 
+      &:nth-child(1) {
+        &::after {
+          top: -25vw;
+          left: 22vw;
+        }
+      }
+
+      &:nth-child(2) {
+        &::after {
+          top: -20vw;
+          left: -25vw;
+        }
+      }
+
+      &:nth-child(3) {
+        &::after {
+          top: -30vw;
+          left: -37vw;
+        }
+      }
+
+      &:nth-child(4) {
+        &::after {
+          top: -40vw;
+          left: -55vw;
+        }
+      }
+
+      &:nth-child(5) {
+        &::after {
+          top: 60vw;
+          left: -55vw;
+        }
+      }
+
+      &:nth-child(6) {
+        &::after {
+          top: 55vw;
+          left: -42vw;
+        }
+      }
+
+      &:nth-child(7) {
+        &::after {
+          top: 50vw;
+          left: -15vw;
+        }
+      }
+
       &::after {
         content: attr(data-detail);
         pointer-events: none;
         position: absolute;
         color: $black;
-        font-size: 18px;
+        font-size: 4.15vw;
+        text-align: center;
         line-height: 1;
-        white-space: nowrap;
         opacity: 0;
+
+        @include breakpoint(phablet) {
+          font-size: 2vw;
+          max-width: none;
+          white-space: nowrap;
+        }
+
+        @include breakpoint(laptop) {
+          font-size: 1.25vw;
+        }
 
         @include transform(translateY(5px));
       }
@@ -153,23 +221,11 @@ export default {
         &:hover {
           color: $steel-blue;
         }
-
-        &::after {
-          top: 15vw;
-          left: -23vw;
-
-          @include transform(rotate(-0.25turn));
-        }
       }
 
       &:nth-child(2) {
         &:hover {
           color: $shakespeare;
-        }
-
-        &::after {
-          top: 2.75vw;
-          left: 12vw;
         }
       }
 
@@ -177,21 +233,11 @@ export default {
         &:hover {
           color: $tradewind;
         }
-
-        &::after {
-          top: 33vw;
-          left: -16vw;
-        }
       }
 
       &:nth-child(4) {
         &:hover {
           color: $puerto-rico;
-        }
-
-        &::after {
-          top: -10vw;
-          left: -55vw;
         }
       }
 
@@ -199,23 +245,11 @@ export default {
         &:hover {
           color: $emerald;
         }
-
-        &::after {
-          top: 20vw;
-          left: 10vw;
-        }
       }
 
       &:nth-child(6) {
         &:hover {
           color: $puerto-rico;
-        }
-
-        &::after {
-          top: -20vw;
-          left: -25vw;
-
-          @include transform(rotate(-0.12turn));
         }
       }
 
@@ -223,10 +257,63 @@ export default {
         &:hover {
           color: $tradewind;
         }
+      }
 
-        &::after {
-          top: -10vw;
-          left: 16vw;
+      @include breakpoint(laptop) {
+        &:nth-child(1) {
+          &::after {
+            top: 15vw;
+            left: -23vw;
+            max-width: none;
+
+            @include transform(rotate(-0.25turn));
+          }
+        }
+
+        &:nth-child(2) {
+          &::after {
+            top: 2.75vw;
+            left: 12vw;
+          }
+        }
+
+        &:nth-child(3) {
+          &::after {
+            top: 33vw;
+            left: -16vw;
+          }
+        }
+
+        &:nth-child(4) {
+          &::after {
+            top: -10vw;
+            left: -55vw;
+          }
+        }
+
+        &:nth-child(5) {
+          &::after {
+            top: 20vw;
+            left: 10vw;
+          }
+        }
+
+        &:nth-child(6) {
+          &::after {
+            top: -21vw;
+            left: -17vw;
+            white-space: normal;
+            max-width: 25vw;
+
+            @include transform(rotate(-0.12turn));
+          }
+        }
+
+        &:nth-child(7) {
+          &::after {
+            top: -10vw;
+            left: 16vw;
+          }
         }
       }
 
