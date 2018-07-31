@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
-$lato: 'Lato', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700');
+$josefin: 'Josefin Sans', sans-serif;
 
-$bridal-heath: #FFFAF0;
-$tuft-bush: #FFD7C9;
-$mona-lisa: #FFA799;
+$ecru: #F6F3EA;
+$demin: #1A77C6;
+// $tawny-port: #762440;
+$elm: #1D765E;
 
 a {
   color: $black;
 
   &:hover,
   &:focus {
-    color: $tuft-bush;
+    color: $elm;
   }
 }
