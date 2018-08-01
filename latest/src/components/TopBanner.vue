@@ -41,17 +41,17 @@ export default {
       this.prevProject = '';
       this.nextProject = '';
 
-      this.$router.options.routes.forEach((route, index) => {
+      this.$router.options.routes.forEach((route, index) => {        
         const firstProject = this.$router.options.routes[1].path;
-        const lastProject = this.$router.options.routes[this.$router.options.routes.length - 1].path;        
-        
+        const lastProject = this.$router.options.routes[this.$router.options.routes.length - 1].path;  
+
         if (this.$router.currentRoute.path === firstProject) {
           this.nextProject = this.$router.options.routes[2].path;
         } else if (this.$router.currentRoute.path === lastProject) {
-          this.prevProject = this.$router.options.routes[this.$router.options.routes.length - 2].path;
-        } else {
+          this.prevProject = this.$router.options.routes[this.$router.options.routes.length - 2].path;  
+        } else if ( this.$router.currentRoute.path === route.path ) {        
           this.prevProject = this.$router.options.routes[index - 1].path;
-          this.nextProject = this.$router.options.routes[index + 1].path;
+          this.nextProject = this.$router.options.routes[index + 1].path; 
         }
       });
     },
