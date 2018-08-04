@@ -2,7 +2,10 @@
   <div id="page-11">
   
     <div class="copy-container">
-      <div class="title"></div>
+      <div class="title">
+        <h1>{{ header }}</h1>
+        <h2>{{ subheader }}</h2>
+      </div>
 
       <div class="featured"></div>
 
@@ -19,7 +22,8 @@ export default {
   name: 'Page11',
   data () {
     return {
-      
+      header: 'New Typo Graphics Page Eleven',
+      subheader: 'Karly Hoffman'
     }
   },
   methods:{
@@ -34,5 +38,24 @@ export default {
 
 #page-11 {
   background-color: $ecru;
+  min-height: 100vh;
+
+  .title {
+    display: inline-block;
+
+    h1 {
+      display: inline-block;
+      text-align: right;
+      margin: 0;
+    }
+
+    h2 {
+      display: inline-block;
+      transform-origin: bottom left;
+      margin-right: 25px;
+
+      @include transform(rotate(90deg));
+    }
+  }
 }
 </style>
