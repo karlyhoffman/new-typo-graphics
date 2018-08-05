@@ -1,17 +1,19 @@
 <template>
   <div id="page-11">
   
-    <div class="copy-container">
+    <div class="copy-col-left">
       <div class="title">
         <h1>{{ header }}</h1>
         <h2>{{ subheader }}</h2>
       </div>
 
-      <div class="featured"></div>
-
       <div class="projects"></div>
 
       <div class="contact"></div>
+    </div>
+
+    <div class="copy-col-right">
+      <div class="featured"></div>
     </div>
 
   </div>
@@ -22,8 +24,8 @@ export default {
   name: 'Page11',
   data () {
     return {
-      header: 'New Typo Graphics Page Eleven',
-      subheader: 'Karly Hoffman'
+      header: 'Portfolio Designs Inspired by New Typo Graphics',
+      subheader: 'Page Eleven'
     }
   },
   methods:{
@@ -37,24 +39,35 @@ export default {
 @import '../../assets/styles/vars_page11.scss';
 
 #page-11 {
-  background-color: $ecru;
+  display: flex;
+  background-color: $paper;
+  color: $charcoal;
+  border-bottom: 2.5vw solid $gold;
+  font-family: $josefin;
   min-height: 100vh;
+  padding-top: 10vw;
 
-  .title {
-    display: inline-block;
+  .copy-col-left {
+    width: 65vw;
 
-    h1 {
-      display: inline-block;
+    .title {
+      max-width: 45vw;
       text-align: right;
-      margin: 0;
-    }
+      margin: 0 0 0 auto;
 
-    h2 {
-      display: inline-block;
-      transform-origin: bottom left;
-      margin-right: 25px;
+      h1, h2 {
+        display: inline-block;
+        font-size: 3vw;
+        font-weight: $bold;
+        text-transform: uppercase;
+        margin: 0;
+      }
 
-      @include transform(rotate(90deg));
+      h2 {
+        color: $gold;
+
+        @include transform(translate(9.25vw, 9.25vw) rotate(90deg));
+      }
     }
   }
 }
