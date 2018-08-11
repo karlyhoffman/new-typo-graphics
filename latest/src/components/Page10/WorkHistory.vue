@@ -56,11 +56,11 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
+  width: 90%;
   font-size: 0.95rem;
-  white-space: nowrap;
   line-height: 1.75;
+  white-space: nowrap;
   padding-top: 7.5vw;
-  padding-right: 35px;
 
   h2 {
     order: 1;
@@ -89,6 +89,7 @@ export default {
     position: absolute;
     top: 65%;
     left: 7.5vw;
+    width: auto;
     flex-direction: column;
     justify-content: space-evenly;
     padding: 0;
@@ -103,6 +104,7 @@ export default {
     h2 {
       order: 2;
       font-size: 2.15rem;
+      margin: 20px 0 18px;
       @include css3-prefix(transform, translateX(-5%));
     }
 
