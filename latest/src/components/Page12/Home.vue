@@ -1,19 +1,19 @@
 <template>
   <div id="page-12">
   
-    <div class="copy-col-left">
+    <div class="copy-container">
       <div class="title">
         <h1>{{ header }}</h1>
         <h2>{{ subheader }}</h2>
       </div>
 
-      <div class="projects"></div>
+      <ul class="projects">
+        <li v-for="project in projects" :key="project.id">{{ project }}</li>
+      </ul>
+
+      <div class="experience-skills"></div>
 
       <div class="contact"></div>
-    </div>
-
-    <div class="copy-col-right">
-      <div class="featured"></div>
     </div>
 
   </div>
@@ -25,7 +25,12 @@ export default {
   data () {
     return {
       header: 'Portfolio Designs Inspired by New Typo Graphics',
-      subheader: 'Page Twelve'
+      subheader: 'Page Twelve',
+      projects: [
+        'Project One',
+        'Project Two',
+        'Project Three'
+      ]
     }
   },
   methods:{
@@ -39,21 +44,29 @@ export default {
 @import '../../assets/styles/vars_page12.scss';
 
 #page-12 {
-  display: flex;
   background-color: $paper;
   color: $charcoal;
   border-bottom: 2.5vw solid $gold;
   font-family: $josefin;
+  line-height: 1.2;
+  display: flex;
   min-height: 100vh;
   padding-top: 10vw;
 
-  .copy-col-left {
-    width: 65vw;
+  .copy-container {
+    position: relative;
+    width: 90vw;
+    margin: 0 auto;
 
     .title {
-      max-width: 45vw;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 42%;
       text-align: right;
-      margin: 0 0 0 auto;
+      margin: 0 auto;
+
+      @include transform(translateX(-50%));
 
       h1, h2 {
         display: inline-block;
@@ -68,6 +81,17 @@ export default {
 
         @include transform(translate(9.25vw, 9.25vw) rotate(90deg));
       }
+    }
+
+    .projects {
+      position: absolute;
+      top: 25%;
+      right: 5.5%;
+      width: 22%;
+      border-top: 6px solid $charcoal; 
+      border-bottom: 6px solid $charcoal;
+      line-height: 1.5; 
+      padding: 7px 0 5px;
     }
   }
 }
