@@ -11,7 +11,9 @@
         <li v-for="project in projects" :key="project.id">{{ project }}</li>
       </ul>
 
-      <div class="experience-skills"></div>
+      <ul class="experience-skills">
+        <li v-for="skill in skills" :key="skill.id">{{ skill }}</li>
+      </ul>
 
       <div class="contact"></div>
     </div>
@@ -30,6 +32,14 @@ export default {
         'Project One',
         'Project Two',
         'Project Three'
+      ],
+      skills: [
+        'HTML',
+        'CSS/SCSS',
+        'Vue',
+        'Angular',
+        'React',
+        'GSAP'
       ]
     }
   },
@@ -55,6 +65,7 @@ export default {
 
   .copy-container {
     position: relative;
+    height: 37.5vw;
     width: 90vw;
     margin: 0 auto;
 
@@ -92,6 +103,12 @@ export default {
       border-bottom: 6px solid $charcoal;
       line-height: 1.5; 
       padding: 7px 0 5px;
+    }
+
+    .experience-skills {
+      position: absolute;
+      left: 0;
+      bottom: 0;
     }
   }
 }
