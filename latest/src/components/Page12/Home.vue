@@ -12,6 +12,7 @@
       </ul>
 
       <ul class="experience-skills">
+        <li>Knowledgeable in:</li>
         <li v-for="skill in skills" :key="skill.id">{{ skill }}</li>
       </ul>
 
@@ -72,7 +73,7 @@ export default {
     .title {
       position: absolute;
       top: 0;
-      left: 50%;
+      left: 48%;
       width: 42%;
       text-align: right;
       margin: 0 auto;
@@ -97,7 +98,7 @@ export default {
     .projects {
       position: absolute;
       top: 25%;
-      right: 5.5%;
+      right: 7.5%;
       width: 22%;
       border-top: 6px solid $charcoal; 
       border-bottom: 6px solid $charcoal;
@@ -107,8 +108,16 @@ export default {
 
     .experience-skills {
       position: absolute;
-      left: 0;
-      bottom: 0;
+      left: 15%;
+      bottom: 2.5%; 
+      width: 15%;
+
+        li {
+          border-top: 5px solid $gold;
+          border-bottom: 5px solid $gold;
+          margin-bottom: -5px;
+          padding: 10px 0 8px;
+        }
     }
   }
 }
