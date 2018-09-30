@@ -12,11 +12,13 @@
       </ul>
 
       <ul class="experience-skills">
-        <li>Knowledgeable in:</li>
+        <!-- <li>Knowledgeable in:</li> -->
         <li v-for="skill in skills" :key="skill.id">{{ skill }}</li>
       </ul>
 
-      <div class="contact"></div>
+      <div class="contact">
+        <p>Follow <a href="https://github.com/karlyhoffman" target="_blank">karlyhoffman</a> on Github to keep up with her latest projects.</p>
+      </div>
     </div>
 
   </div>
@@ -110,14 +112,31 @@ export default {
       position: absolute;
       left: 15%;
       bottom: 2.5%; 
-      width: 15%;
+      width: 17.5%;
 
-        li {
-          border-top: 5px solid $gold;
-          border-bottom: 5px solid $gold;
-          margin-bottom: -5px;
-          padding: 10px 0 8px;
+      li {
+        border-top: 5px solid $gold;
+        border-bottom: 5px solid $gold;
+        margin-bottom: -5px;
+        padding: 10px 0 8px;
+      }
+    }
+
+    .contact {
+      position: absolute;
+      left: 33.75%;
+      bottom: 1.4%; 
+      width: 27%;
+      border-bottom: 25px solid $charcoal;
+      
+      p {
+        font-weight: $reg;
+        margin-bottom: 5px;
+
+        a {
+          font-weight: $semi-bold;
         }
+      }
     }
   }
 }
